@@ -1,0 +1,11 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+USE ieee.numeric_std.ALL;
+
+ENTITY synchronous_counter IS
+   
+	PORT(
+	clk, RSTn, clear, en: IN std_logic;
+	);
+BEGIN
+END synchronous_counter;

@@ -1,0 +1,7 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+
+ENTITY synchronous_counter IS
+BEGIN
+END synchronous_counter;
