@@ -1,0 +1,6 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+ENTITY mux_2_1 IS
+BEGIN
+END mux_2_1;

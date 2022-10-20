@@ -1,0 +1,8 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.ALL;
+
+
+ENTITY comparator IS
+BEGIN
+
+END comparator;

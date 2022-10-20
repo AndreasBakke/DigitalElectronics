@@ -1,0 +1,17 @@
+--LIBRARY ieee;
+--USE ieee.std_logic_1164.ALL;
+--
+--ENTITY mux_2_1 IS
+--	PORT(
+--		s: IN std_logic;
+--		X: IN std_logic_vector(3 DOWNTO 0); -- How to assign theese to SW(7 DOWNTO 4) AND use x as name?
+--		y: IN std_logic_vector(3 DOWNTO 0);
+--		m: OUT std_logic_vector(3 DOWNTO 0)
+--	);
+--BEGIN
+--END mux_2_1;
+--
+--ARCHITECTURE Behav OF mux_2_1 IS
+--BEGIN
+--	m <= x when(s='0') else y;
+--END BEhav;
