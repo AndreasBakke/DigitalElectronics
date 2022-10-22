@@ -4,24 +4,6 @@ USE ieee.std_logic_1164.ALL;
 
 ENTITY segment_decoder_7 IS
 	PORT(
-		SW: IN std_logic_vector(0 TO 3);
-		HEX0: OUT std_logic_vector(6 DOWNTO 0)
-	);
-BEGIN
-END segment_decoder_7;
-
-
-ARCHITECTURE Behav OF segment_decoder_7 IS
-BEGIN
-	PROCESS(SW)
-	BEGIN
-		CASE SW IS
-			WHEN "0000" => HEX0 <= "LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
-
-
-ENTITY segment_decoder_7 IS
-	PORT(
 		SW: IN std_logic_vector(3 DOWNTO 0);
 		HEX0: OUT std_logic_vector(0 TO 6)
 	);
