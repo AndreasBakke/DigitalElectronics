@@ -1,0 +1,1 @@
+--incr --debug "typical" --relax --mt "8" -L "xil_defaultlib" -L "secureip" --snapshot "pseudo_random_generator_tb_behav" "xil_defaultlib.pseudo_random_generator_tb" -log "elaborate.log" 

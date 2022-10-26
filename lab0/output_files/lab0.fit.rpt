@@ -1,5 +1,5 @@
 Fitter report for lab0
-Tue Oct 18 13:44:29 2022
+Tue Oct 25 13:59:41 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -59,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Tue Oct 18 13:44:29 2022       ;
+; Fitter Status                   ; Successful - Tue Oct 25 13:59:41 2022       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; lab0                                        ;
 ; Top-level Entity Name           ; comparator                                  ;
@@ -2283,7 +2283,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.06 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.04 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2292,8 +2292,8 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file /home/andreasb/intelFPGA_lite/21.1/lab0/output_files/lab0.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 246 warnings
-    Info: Peak virtual memory: 1819 megabytes
-    Info: Processing ended: Tue Oct 18 13:44:29 2022
+    Info: Peak virtual memory: 1810 megabytes
+    Info: Processing ended: Tue Oct 25 13:59:41 2022
     Info: Elapsed time: 00:00:19
     Info: Total CPU time (on all processors): 00:00:34
 

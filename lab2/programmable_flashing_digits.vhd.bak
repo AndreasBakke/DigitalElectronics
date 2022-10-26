@@ -1,0 +1,6 @@
+
+
+entity programmable_flashing_digits IS
+BEGIN
+
+END programmable_flashing_digits;

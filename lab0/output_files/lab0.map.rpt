@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab0
-Tue Oct 18 13:44:09 2022
+Tue Oct 25 13:59:18 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Oct 18 13:44:09 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Oct 25 13:59:18 2022       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; lab0                                        ;
 ; Top-level Entity Name           ; comparator                                  ;
@@ -263,7 +263,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Tue Oct 18 13:44:03 2022
+    Info: Processing started: Tue Oct 25 13:59:12 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab0 -c lab0
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -865,8 +865,8 @@ Info (21057): Implemented 50 device resources after synthesis - the final resour
     Info (21059): Implemented 20 output pins
     Info (21061): Implemented 22 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 579 warnings
-    Info: Peak virtual memory: 497 megabytes
-    Info: Processing ended: Tue Oct 18 13:44:09 2022
+    Info: Peak virtual memory: 498 megabytes
+    Info: Processing ended: Tue Oct 25 13:59:18 2022
     Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:13
 

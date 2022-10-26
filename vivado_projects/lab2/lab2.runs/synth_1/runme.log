@@ -1,0 +1,220 @@
+
+*** Running vivado
+    with args -log pseudo_random_generator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source pseudo_random_generator.tcl
+
+
+****** Vivado v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source pseudo_random_generator.tcl -notrace
+Command: synth_design -top pseudo_random_generator -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28133
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2627.164 ; gain = 0.000 ; free physical = 2151 ; free virtual = 12314
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'pseudo_random_generator' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:16]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'synchronous_counter' declared at '/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/new/synchronous_counter.vhd:5' bound to instance 'synchronus_counter_1' of component 'synchronous_counter' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:31]
+INFO: [Synth 8-638] synthesizing module 'synchronous_counter' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/new/synchronous_counter.vhd:16]
+	Parameter N bound to: 32 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'synchronous_counter' (0#1) [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/new/synchronous_counter.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'pseudo_random_generator' (0#1) [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:16]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2627.164 ; gain = 0.000 ; free physical = 3159 ; free virtual = 13329
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2627.164 ; gain = 0.000 ; free physical = 3225 ; free virtual = 13400
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3219 ; free virtual = 13402
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'lsfr.test_reg' in module 'pseudo_random_generator'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE0 |                               01 | 00000000000000000000000000000000
+                  iSTATE |                               10 | 00000000000000000000000000000001
+*
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'lsfr.test_reg' using encoding 'one-hot' in module 'pseudo_random_generator'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3196 ; free virtual = 13385
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input    2 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[9]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[8]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[7]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[6]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[5]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[4]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[3]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[2]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[1]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'LEDR_reg[0]/Q' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.srcs/sources_1/imports/lab2/pseudo_random_generator.vhd:34]
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_lsfr.test_reg[1]) is unused and will be removed from module pseudo_random_generator.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_lsfr.test_reg[0]) is unused and will be removed from module pseudo_random_generator.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 2913 ; free virtual = 13107
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 2915 ; free virtual = 13109
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 2909 ; free virtual = 13104
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3308 ; free virtual = 13104
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3308 ; free virtual = 13104
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3308 ; free virtual = 13104
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3308 ; free virtual = 13104
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3308 ; free virtual = 13104
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3308 ; free virtual = 13104
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |    10|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    10|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3308 ; free virtual = 13104
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 30 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.168 ; gain = 8.004 ; free physical = 3307 ; free virtual = 13103
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 2635.176 ; gain = 8.004 ; free physical = 3307 ; free virtual = 13103
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2635.176 ; gain = 0.000 ; free physical = 3390 ; free virtual = 13189
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2635.176 ; gain = 0.000 ; free physical = 3270 ; free virtual = 13096
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 2a178c53
+INFO: [Common 17-83] Releasing license: Synthesis
+17 Infos, 3 Warnings, 30 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 2635.176 ; gain = 8.012 ; free physical = 3478 ; free virtual = 13304
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+INFO: [Common 17-1381] The checkpoint '/home/andreasb/intelFPGA_lite/21.1/vivado_projects/lab2/lab2.runs/synth_1/pseudo_random_generator.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file pseudo_random_generator_utilization_synth.rpt -pb pseudo_random_generator_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Oct 23 14:16:44 2022...

@@ -1,17 +1,17 @@
-Fitter Status : Successful - Thu Oct 20 13:21:44 2022
+Fitter Status : Successful - Tue Oct 25 13:48:32 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : lab2
-Top-level Entity Name : synchronous_counter
+Top-level Entity Name : programmable_flashing_digits
 Family : Cyclone V
-Device : 5CSEMA6F31C6
+Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 9 / 41,910 ( < 1 % )
-Total registers : 16
-Total pins : 21 / 457 ( 5 % )
+Logic utilization (in ALMs) : 29 / 32,070 ( < 1 % )
+Total registers : 0
+Total pins : 11 / 457 ( 2 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 5,662,720 ( 0 % )
-Total RAM Blocks : 0 / 553 ( 0 % )
-Total DSP Blocks : 0 / 112 ( 0 % )
+Total block memory bits : 0 / 4,065,280 ( 0 % )
+Total RAM Blocks : 0 / 397 ( 0 % )
+Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0

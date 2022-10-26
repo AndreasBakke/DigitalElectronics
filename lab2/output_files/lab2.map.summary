@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Thu Oct 20 13:21:22 2022
+Analysis & Synthesis Status : Successful - Tue Oct 25 13:48:12 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : lab2
-Top-level Entity Name : synchronous_counter
+Top-level Entity Name : programmable_flashing_digits
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 16
-Total pins : 21
+Total registers : 0
+Total pins : 11
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0
