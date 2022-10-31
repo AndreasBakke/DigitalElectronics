@@ -5,7 +5,7 @@ USE ieee.numeric_std.ALL;
 
 ENTITY programmable_flashing_digits IS
     PORT(
-    SW: IN std_logic_vector(1 DOWNTO 0);
+    SW: IN std_logic_vector(2 DOWNTO 0);
     KEY0: IN std_logic;
     CLOCK_50: IN std_logic;
     HEX0: OUT std_logic_vector(0 TO 6)
@@ -43,8 +43,6 @@ ARCHITECTURE Behav of programmable_flashing_digits IS
 BEGIN
     hex_1: segment_decoder_7 
     PORT MAP(SW=> hex_0_driver, HEX0 => HEX0);
-
-
     
     counter: synchronous_counter 
         GENERIC MAP(N=> 32)
@@ -63,7 +61,7 @@ BEGIN
 	       delay := delay_250;
 	   END IF;
         
-        IF unsigned(count) = delay THEN -- 9 simulation change to 49 999 999 for implementation
+        IF unsigned(count) >= delay THEN
            alert <= '1';
            clearcount <= '1';
         ELSE
@@ -77,11 +75,19 @@ BEGIN
     signal_driver: PROCESS(alert)
         variable s: integer := 0;
      BEGIN
+        IF SW(2) = '1' THEN
 			IF s = 9 THEN
 				 s := 0;
 			ELSE
 				 s := s+1;
 			END IF;
+        ELSIF SW(2) = '0' THEN
+            IF s = 0 THEN
+                s := 9;
+            ELSE
+                s := s+1;
+            END IF;
+        END IF;
 			hex_0_driver <= std_logic_vector(to_unsigned(s, 4));
      END PROCESS;
 

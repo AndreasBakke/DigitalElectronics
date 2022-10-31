@@ -46,7 +46,6 @@ begin
         if KEY_0 = '0' THEN
             registers <= (OTHERS => '1');
         elsif rising_edge(CLOCK_50) then
-            -- GENERATE instead
             registers(9) <= registers(0);
             registers(8) <= registers(9);
             registers(7) <= registers(8) XOR registers(0);
