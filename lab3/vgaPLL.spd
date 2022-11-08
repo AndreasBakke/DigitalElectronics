@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file path="vgaPLL_sim/vgaPLL.vho" type="VHDL" />
+ <topLevel name="vgaPLL" />
+ <deviceFamily name="cyclonev" />
+</simPackage>
