@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Nov  8 12:18:22 2022
+Analysis & Synthesis Status : Successful - Tue Nov  8 14:54:17 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : lab3
 Top-level Entity Name : VGA_controller_mem
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 28
+Total registers : 32
 Total pins : 31
 Total virtual pins : 0
-Total block memory bits : 32,768
+Total block memory bits : 786,432
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
