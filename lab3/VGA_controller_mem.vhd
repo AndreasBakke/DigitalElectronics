@@ -106,9 +106,9 @@ BEGIN
     vgaPLL_0: vgaPLL PORT MAP(refclk => CLOCK_50, rst => key_not, outclk_0 => clk, outclk_1 => VGA_CLK, locked => l); --PLL for board
     rst_n <= KEY(0) AND l; -- Reset if either locked from pll or key_0 is 0
 
-	 mem_rom_r_1: img_rom_r PORT MAP(aclr => rst_n, address => mem_addr, clock => mem_clock, rden => mem_enable, q=>mem_r);
-	 mem_rom_g_1: img_rom_g PORT MAP(aclr => rst_n, address => mem_addr, clock => mem_clock, rden => mem_enable, q=>mem_g);
-	 mem_rom_b_1: img_rom_b PORT MAP(aclr => rst_n, address => mem_addr, clock => mem_clock, rden => mem_enable, q=>mem_b);
+	 mem_rom_r_1: img_rom_r PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => mem_enable, q=>mem_r);
+	 mem_rom_g_1: img_rom_g PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => mem_enable, q=>mem_g);
+	 mem_rom_b_1: img_rom_b PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => mem_enable, q=>mem_b);
     	 
 	 
 	 --Simulated pll for simulation:
@@ -178,12 +178,8 @@ BEGIN
             IF currstate_v = c THEN --output logic
                 mem_enable <= '1';
 					 mem_addr <= std_logic_vector(unsigned(mem_addr)+1);
-					 mem_clock <= '1';
-                VGA_R <= mem_R; VGA_G <= mem_g; VGA_B <= mem_b;
+                VGA_R <= (OTHERS => '1') ; VGA_G <= mem_g; VGA_B <= mem_b;
                 
-					 mem_clock <= '0';
-                mem_enable <='0'; --usikker på denne
-					 
 					 --Hvis dette ikke funker: lag eget klokkesignal for å lese! Posedge rett etter mem_enable, og neg rett etter "mem_disable"
             ELSE
                 mem_enable <='0';
