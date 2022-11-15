@@ -196,6 +196,7 @@ BEGIN
 					 --Hvis dette ikke funker: lag eget klokkesignal for å lese! Posedge rett etter mem_enable, og neg rett etter "mem_disable"
             ELSE
                 --mem_enable <='0';
+					 mem_addr <= (others => '0') 
                  VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
             END IF;
             
