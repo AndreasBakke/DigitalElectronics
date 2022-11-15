@@ -79,7 +79,7 @@ ARCHITECTURE Behav of VGA_controller_mem_3 IS
     
    
     SIGNAL key_not, clk, buff_clk_vga, l, rst_n, h_sync, v_sync: std_logic;
-    SIGNAL clear_h, clear_v: std_logic;
+    SIGNAL clear_h, clear_v: std_logic := '1';
     SIGNAL h_count, v_count: std_logic_vector(9 DOWNTO 0);
 	 SIGNAL mem_enable: std_logic;
 	 SIGNAL mem_r, mem_b, mem_g: std_logic_vector(7 DOWNTO 0);
@@ -156,7 +156,11 @@ BEGIN
         WHEN c=>
             h_sync <= '1';
 				IF currstate_v = c THEN --output logic
-                VGA_R <= mem_r ; VGA_G <= mem_g; VGA_B <= mem_b;
+					 IF unsigned(v_count) < 176 AND unsigned(h_count) <144 THEN
+						VGA_R <= mem_r ; VGA_G <= mem_g; VGA_B <= mem_b;
+					  ELSE
+						VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
+					  END IF;
             ELSE
                 VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
             END IF;
