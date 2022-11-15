@@ -28,7 +28,7 @@ ARCHITECTURE TBArch of VGA_controller_tb IS
     signal clock_50_s, VGA_CLK_s, VGA_BLANK_N_s, VGA_HS_s, VGA_VS_s, VGA_SYNC_N_s: std_logic;
     SIGNAL VGA_R_s, VGA_G_s, VGA_B_s: std_logic_vector(7 DOWNTO 0);
     
-    CONSTANT clk_period: time := 5ps;  --Sped up for sake of simulation
+    CONSTANT clk_period: time := 2ps;  --Sped up for sake of simulation
 BEGIN
     dut: VGA_controller
         PORT MAP(

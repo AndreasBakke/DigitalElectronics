@@ -22,15 +22,15 @@ END VGA_controller;
 
 
 ARCHITECTURE Behav of VGA_controller IS
-    COMPONENT vgaPLL IS
-        port (
-		refclk   : in  std_logic := '0'; --  refclk.clk
-		rst      : in  std_logic := '0'; --   reset.reset
-		outclk_0 : out std_logic;        -- outclk0.clk
-		outclk_1 : out std_logic;        -- outclk1.clk
-		locked   : out std_logic         --  locked.export
-	);
-    END COMPONENT;
+--    COMPONENT vgaPLL IS
+--        port (
+--		refclk   : in  std_logic := '0'; --  refclk.clk
+--		rst      : in  std_logic := '0'; --   reset.reset
+--		outclk_0 : out std_logic;        -- outclk0.clk
+--		outclk_1 : out std_logic;        -- outclk1.clk
+--		locked   : out std_logic         --  locked.export
+--	);
+--    END COMPONENT;
    
     COMPONENT synchronous_counter IS
         GENERIC(N: integer := 16);
@@ -63,29 +63,20 @@ BEGIN
     VGA_VS <= v_sync;
     
     
-    vgaPLL_0: vgaPLL PORT MAP(refclk => CLOCK_50, rst => key_not, outclk_0 => clk, outclk_1 => VGA_CLK, locked => l); --PLL for board
+    --vgaPLL_0: vgaPLL PORT MAP(refclk => CLOCK_50, rst => key_not, outclk_0 => clk, outclk_1 => VGA_CLK, locked => l); --PLL for board
     --Simulated pll for simulation:
-	 --VGA_CLK <= NOT clk;
---    l <= '1';
---    clockGenerator: PROl <= '1';
---    clockGenerator: PROCESS(CLOCK_50) IS BEGIN --creates 2 25MHZ signal
---        IF rising_edge(clock_50) THEN
---            if clk = '0' THEN
---                clk <= '1';
---            ELSE
---                clk <= '0';
---            END IF;
---        END IF;
---    END PROCESS;
---    CESS(CLOCK_50) IS BEGIN --creates 2 25MHZ signal
---        IF rising_edge(clock_50) THEN
---            if clk = '0' THEN
---                clk <= '1';
---            ELSE
---                clk <= '0';
---            END IF;
---        END IF;
---    END PROCESS;
+	 VGA_CLK <= NOT clk;
+    l <= '1';
+    clockGenerator: PROCESS(CLOCK_50) IS BEGIN --creates 2 25MHZ signal
+        IF rising_edge(clock_50) THEN
+            if clk = '0' THEN
+                clk <= '1';
+            ELSE
+                clk <= '0';
+            END IF;
+        END IF;
+    END PROCESS;
+    
     
     rst_n <= KEY(0) AND l; -- Reset if either locked from pll or key_0 is 0
 

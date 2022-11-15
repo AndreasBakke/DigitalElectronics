@@ -137,7 +137,7 @@ BEGIN
                         VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '1'); VGA_B <= (OTHERS => '0');
                     END IF;
                 ELSE
-                 IF unsigned(h_count) < 319 THEN --half width
+                 IF unsigned(h_count) <= 319 THEN --half width
                         VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '1');
                     ELSE
                         VGA_R <= (OTHERS => '1'); VGA_G <= (OTHERS => '1'); VGA_B <= (OTHERS => '1');
@@ -159,6 +159,7 @@ BEGIN
             ELSE
                 nextstate_h <= d; clear_h <= '0';
             END IF;
+			-- ADD WHEN OTHERS
         END CASE;
    END PROCESS;--h_nextstate
    
@@ -197,7 +198,7 @@ BEGIN
             ELSE
                 nextstate_v <= d; clear_v <= '0';
             END IF;
-            
+            --ADD WHEN OTHERS
         END CASE;
     END PROCESS; --v_combLogic
 

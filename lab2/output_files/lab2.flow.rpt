@@ -1,5 +1,5 @@
 Flow report for lab2
-Tue Oct 25 13:48:41 2022
+Tue Nov 15 11:49:45 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Oct 25 13:48:37 2022       ;
+; Flow Status                     ; Successful - Tue Nov 15 11:49:41 2022       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; lab2                                        ;
-; Top-level Entity Name           ; programmable_flashing_digits                ;
+; Top-level Entity Name           ; pseudo_random_generator                     ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 29 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 11 / 457 ( 2 % )                            ;
+; Logic utilization (in ALMs)     ; 33 / 32,070 ( < 1 % )                       ;
+; Total registers                 ; 89                                          ;
+; Total pins                      ; 12 / 457 ( 3 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -68,28 +68,28 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/25/2022 13:48:07 ;
+; Start date & time ; 11/15/2022 11:49:08 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab2                ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                         ;
-+-------------------------------------+----------------------------------------+---------------+------------------------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name                  ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+------------------------------+------------+
-; COMPILER_SIGNATURE_ID               ; 246337694279799.166669848763853        ; --            ; --                           ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --                           ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --                           ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; programmable_flashing_digits ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; programmable_flashing_digits ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; programmable_flashing_digits ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --                           ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                           ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --                           ; --         ;
-; TOP_LEVEL_ENTITY                    ; programmable_flashing_digits           ; lab2          ; --                           ; --         ;
-+-------------------------------------+----------------------------------------+---------------+------------------------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                    ;
++-------------------------------------+----------------------------------------+---------------+-------------------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name             ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-------------------------+------------+
+; COMPILER_SIGNATURE_ID               ; 246337694279799.166850934809143        ; --            ; --                      ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --                      ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --                      ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; pseudo_random_generator ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; pseudo_random_generator ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; pseudo_random_generator ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --                      ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --                      ; --         ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --                      ; --         ;
+; TOP_LEVEL_ENTITY                    ; pseudo_random_generator                ; lab2          ; --                      ; --         ;
++-------------------------------------+----------------------------------------+---------------+-------------------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -97,11 +97,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:05     ; 1.0                     ; 493 MB              ; 00:00:13                           ;
-; Fitter               ; 00:00:19     ; 1.0                     ; 1858 MB             ; 00:00:36                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 514 MB              ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 841 MB              ; 00:00:03                           ;
-; Total                ; 00:00:30     ; --                      ; --                  ; 00:00:56                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 495 MB              ; 00:00:14                           ;
+; Fitter               ; 00:00:22     ; 1.0                     ; 1843 MB             ; 00:00:43                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 517 MB              ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.1                     ; 825 MB              ; 00:00:03                           ;
+; Total                ; 00:00:34     ; --                      ; --                  ; 00:01:04                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

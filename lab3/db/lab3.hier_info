@@ -1,4 +1,4 @@
-|VGA_controller_mem
+|VGA_controller_mem_3
 KEY[0] => rst_n.IN1
 KEY[0] => vgaPLL:vgaPLL_0.rst
 KEY[0] => img_rom_r_2:mem_rom_r_1.aclr
@@ -36,7 +36,7 @@ VGA_VS <= VGA_VS.DB_MAX_OUTPUT_PORT_TYPE
 VGA_SYNC_N <= <VCC>
 
 
-|VGA_controller_mem|vgaPLL:vgaPLL_0
+|VGA_controller_mem_3|vgaPLL:vgaPLL_0
 refclk => vgaPLL_0002:vgapll_inst.refclk
 rst => vgaPLL_0002:vgapll_inst.rst
 outclk_0 <= vgaPLL_0002:vgapll_inst.outclk_0
@@ -44,7 +44,7 @@ outclk_1 <= vgaPLL_0002:vgapll_inst.outclk_1
 locked <= vgaPLL_0002:vgapll_inst.locked
 
 
-|VGA_controller_mem|vgaPLL:vgaPLL_0|vgaPLL_0002:vgapll_inst
+|VGA_controller_mem_3|vgaPLL:vgaPLL_0|vgaPLL_0002:vgapll_inst
 refclk => refclk.IN1
 rst => rst.IN1
 outclk_0 <= altera_pll:altera_pll_i.outclk
@@ -52,7 +52,7 @@ outclk_1 <= altera_pll:altera_pll_i.outclk
 locked <= altera_pll:altera_pll_i.locked
 
 
-|VGA_controller_mem|vgaPLL:vgaPLL_0|vgaPLL_0002:vgapll_inst|altera_pll:altera_pll_i
+|VGA_controller_mem_3|vgaPLL:vgaPLL_0|vgaPLL_0002:vgapll_inst|altera_pll:altera_pll_i
 refclk => general[0].gpll.I_REFCLK
 refclk => general[1].gpll.I_REFCLK
 refclk1 => ~NO_FANOUT~
@@ -228,7 +228,7 @@ cascade_out[1] <= <GND>
 zdbfbclk <> <GND>
 
 
-|VGA_controller_mem|img_rom_r_2:mem_rom_r_1
+|VGA_controller_mem_3|img_rom_r_2:mem_rom_r_1
 aclr => altsyncram:altsyncram_component.aclr0
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
@@ -257,7 +257,7 @@ q[6] <= altsyncram:altsyncram_component.q_a[6]
 q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|VGA_controller_mem|img_rom_r_2:mem_rom_r_1|altsyncram:altsyncram_component
+|VGA_controller_mem_3|img_rom_r_2:mem_rom_r_1|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => altsyncram_pk44:auto_generated.rden_a
 wren_b => ~NO_FANOUT~
@@ -313,7 +313,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|VGA_controller_mem|img_rom_r_2:mem_rom_r_1|altsyncram:altsyncram_component|altsyncram_pk44:auto_generated
+|VGA_controller_mem_3|img_rom_r_2:mem_rom_r_1|altsyncram:altsyncram_component|altsyncram_pk44:auto_generated
 aclr0 => _.IN0
 aclr0 => _.IN0
 aclr0 => ram_block1a0.CLR0
@@ -817,7 +817,7 @@ rden_a => address_reg_a[1].ENA
 rden_a => address_reg_a[0].ENA
 
 
-|VGA_controller_mem|img_rom_r_2:mem_rom_r_1|altsyncram:altsyncram_component|altsyncram_pk44:auto_generated|decode_8la:rden_decode
+|VGA_controller_mem_3|img_rom_r_2:mem_rom_r_1|altsyncram:altsyncram_component|altsyncram_pk44:auto_generated|decode_8la:rden_decode
 data[0] => w_anode145w[1].IN0
 data[0] => w_anode158w[1].IN1
 data[0] => w_anode166w[1].IN0
@@ -836,7 +836,7 @@ eq[2] <= w_anode166w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode174w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_controller_mem|img_rom_r_2:mem_rom_r_1|altsyncram:altsyncram_component|altsyncram_pk44:auto_generated|mux_ofb:mux2
+|VGA_controller_mem_3|img_rom_r_2:mem_rom_r_1|altsyncram:altsyncram_component|altsyncram_pk44:auto_generated|mux_ofb:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -927,7 +927,7 @@ sel[1] => l2_w7_n0_mux_dataout.IN0
 sel[1] => _.IN0
 
 
-|VGA_controller_mem|img_rom_g_2:mem_rom_g_1
+|VGA_controller_mem_3|img_rom_g_2:mem_rom_g_1
 aclr => altsyncram:altsyncram_component.aclr0
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
@@ -956,7 +956,7 @@ q[6] <= altsyncram:altsyncram_component.q_a[6]
 q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|VGA_controller_mem|img_rom_g_2:mem_rom_g_1|altsyncram:altsyncram_component
+|VGA_controller_mem_3|img_rom_g_2:mem_rom_g_1|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => altsyncram_ek44:auto_generated.rden_a
 wren_b => ~NO_FANOUT~
@@ -1012,7 +1012,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|VGA_controller_mem|img_rom_g_2:mem_rom_g_1|altsyncram:altsyncram_component|altsyncram_ek44:auto_generated
+|VGA_controller_mem_3|img_rom_g_2:mem_rom_g_1|altsyncram:altsyncram_component|altsyncram_ek44:auto_generated
 aclr0 => _.IN0
 aclr0 => _.IN0
 aclr0 => ram_block1a0.CLR0
@@ -1516,7 +1516,7 @@ rden_a => address_reg_a[1].ENA
 rden_a => address_reg_a[0].ENA
 
 
-|VGA_controller_mem|img_rom_g_2:mem_rom_g_1|altsyncram:altsyncram_component|altsyncram_ek44:auto_generated|decode_8la:rden_decode
+|VGA_controller_mem_3|img_rom_g_2:mem_rom_g_1|altsyncram:altsyncram_component|altsyncram_ek44:auto_generated|decode_8la:rden_decode
 data[0] => w_anode145w[1].IN0
 data[0] => w_anode158w[1].IN1
 data[0] => w_anode166w[1].IN0
@@ -1535,7 +1535,7 @@ eq[2] <= w_anode166w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode174w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_controller_mem|img_rom_g_2:mem_rom_g_1|altsyncram:altsyncram_component|altsyncram_ek44:auto_generated|mux_ofb:mux2
+|VGA_controller_mem_3|img_rom_g_2:mem_rom_g_1|altsyncram:altsyncram_component|altsyncram_ek44:auto_generated|mux_ofb:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -1626,7 +1626,7 @@ sel[1] => l2_w7_n0_mux_dataout.IN0
 sel[1] => _.IN0
 
 
-|VGA_controller_mem|img_rom_b_2:mem_rom_b_1
+|VGA_controller_mem_3|img_rom_b_2:mem_rom_b_1
 aclr => altsyncram:altsyncram_component.aclr0
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
@@ -1655,7 +1655,7 @@ q[6] <= altsyncram:altsyncram_component.q_a[6]
 q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|VGA_controller_mem|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component
+|VGA_controller_mem_3|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => altsyncram_9k44:auto_generated.rden_a
 wren_b => ~NO_FANOUT~
@@ -1711,7 +1711,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|VGA_controller_mem|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component|altsyncram_9k44:auto_generated
+|VGA_controller_mem_3|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component|altsyncram_9k44:auto_generated
 aclr0 => _.IN0
 aclr0 => _.IN0
 aclr0 => ram_block1a0.CLR0
@@ -2215,7 +2215,7 @@ rden_a => address_reg_a[1].ENA
 rden_a => address_reg_a[0].ENA
 
 
-|VGA_controller_mem|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component|altsyncram_9k44:auto_generated|decode_8la:rden_decode
+|VGA_controller_mem_3|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component|altsyncram_9k44:auto_generated|decode_8la:rden_decode
 data[0] => w_anode145w[1].IN0
 data[0] => w_anode158w[1].IN1
 data[0] => w_anode166w[1].IN0
@@ -2234,7 +2234,7 @@ eq[2] <= w_anode166w[2].DB_MAX_OUTPUT_PORT_TYPE
 eq[3] <= w_anode174w[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_controller_mem|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component|altsyncram_9k44:auto_generated|mux_ofb:mux2
+|VGA_controller_mem_3|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component|altsyncram_9k44:auto_generated|mux_ofb:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -2325,7 +2325,7 @@ sel[1] => l2_w7_n0_mux_dataout.IN0
 sel[1] => _.IN0
 
 
-|VGA_controller_mem|synchronous_counter:h_counter
+|VGA_controller_mem_3|synchronous_counter:h_counter
 clk => value[0]~reg0.CLK
 clk => value[1]~reg0.CLK
 clk => value[2]~reg0.CLK
@@ -2392,7 +2392,7 @@ value[8] <= value[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 value[9] <= value[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_controller_mem|synchronous_counter:v_counter
+|VGA_controller_mem_3|synchronous_counter:v_counter
 clk => value[0]~reg0.CLK
 clk => value[1]~reg0.CLK
 clk => value[2]~reg0.CLK

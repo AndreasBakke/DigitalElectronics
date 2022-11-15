@@ -1,13 +1,13 @@
-Fitter Status : Successful - Tue Oct 25 13:48:32 2022
+Fitter Status : Successful - Tue Nov 15 11:49:37 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : lab2
-Top-level Entity Name : programmable_flashing_digits
+Top-level Entity Name : pseudo_random_generator
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 29 / 32,070 ( < 1 % )
-Total registers : 0
-Total pins : 11 / 457 ( 2 % )
+Logic utilization (in ALMs) : 33 / 32,070 ( < 1 % )
+Total registers : 89
+Total pins : 12 / 457 ( 3 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
 Total RAM Blocks : 0 / 397 ( 0 % )
