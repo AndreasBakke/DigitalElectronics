@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab3
-Tue Nov 15 14:58:41 2022
+Tue Nov 15 15:45:20 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -66,7 +66,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Nov 15 14:58:41 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Nov 15 15:45:20 2022       ;
 ; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Lite Edition ;
 ; Revision Name                   ; lab3                                        ;
 ; Top-level Entity Name           ; VGA_controller_mem_3                        ;
@@ -229,14 +229,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                          ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 88                                                                             ;
+; Estimate of Logic utilization (ALMs needed) ; 93                                                                             ;
 ;                                             ;                                                                                ;
-; Combinational ALUT usage for logic          ; 135                                                                            ;
-;     -- 7 input functions                    ; 0                                                                              ;
-;     -- 6 input functions                    ; 40                                                                             ;
+; Combinational ALUT usage for logic          ; 146                                                                            ;
+;     -- 7 input functions                    ; 1                                                                              ;
+;     -- 6 input functions                    ; 37                                                                             ;
 ;     -- 5 input functions                    ; 29                                                                             ;
-;     -- 4 input functions                    ; 18                                                                             ;
-;     -- <=3 input functions                  ; 48                                                                             ;
+;     -- 4 input functions                    ; 4                                                                              ;
+;     -- <=3 input functions                  ; 75                                                                             ;
 ;                                             ;                                                                                ;
 ; Dedicated logic registers                   ; 32                                                                             ;
 ;                                             ;                                                                                ;
@@ -251,8 +251,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                ;
 ; Maximum fan-out node                        ; vgaPLL:vgaPLL_0|vgaPLL_0002:vgapll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
 ; Maximum fan-out                             ; 121                                                                            ;
-; Total fan-out                               ; 2307                                                                           ;
-; Average fan-out                             ; 7.03                                                                           ;
+; Total fan-out                               ; 2291                                                                           ;
+; Average fan-out                             ; 6.76                                                                           ;
 +---------------------------------------------+--------------------------------------------------------------------------------+
 
 
@@ -261,7 +261,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                 ; Entity Name          ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |VGA_controller_mem_3                     ; 135 (109)           ; 32 (8)                    ; 786432            ; 1          ; 31   ; 0            ; |VGA_controller_mem_3                                                                                                               ; VGA_controller_mem_3 ; work         ;
+; |VGA_controller_mem_3                     ; 146 (120)           ; 32 (8)                    ; 786432            ; 1          ; 31   ; 0            ; |VGA_controller_mem_3                                                                                                               ; VGA_controller_mem_3 ; work         ;
 ;    |img_rom_b_2:mem_rom_b_1|              ; 0 (0)               ; 4 (0)                     ; 262144            ; 0          ; 0    ; 0            ; |VGA_controller_mem_3|img_rom_b_2:mem_rom_b_1                                                                                       ; img_rom_b_2          ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 4 (0)                     ; 262144            ; 0          ; 0    ; 0            ; |VGA_controller_mem_3|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component                                                       ; altsyncram           ; work         ;
 ;          |altsyncram_9k44:auto_generated| ; 0 (0)               ; 4 (4)                     ; 262144            ; 0          ; 0    ; 0            ; |VGA_controller_mem_3|img_rom_b_2:mem_rom_b_1|altsyncram:altsyncram_component|altsyncram_9k44:auto_generated                        ; altsyncram_9k44      ; work         ;
@@ -1004,23 +1004,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     CLR               ; 8                           ;
 ;     CLR SCLR          ; 20                          ;
 ;     plain             ; 4                           ;
-; arriav_lcell_comb     ; 136                         ;
-;     arith             ; 20                          ;
-;         1 data inputs ; 20                          ;
-;     normal            ; 116                         ;
+; arriav_lcell_comb     ; 147                         ;
+;     arith             ; 35                          ;
+;         1 data inputs ; 35                          ;
+;     extend            ; 1                           ;
+;         7 data inputs ; 1                           ;
+;     normal            ; 111                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 18                          ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 22                          ;
+;         4 data inputs ; 4                           ;
 ;         5 data inputs ; 29                          ;
-;         6 data inputs ; 40                          ;
+;         6 data inputs ; 37                          ;
 ; arriav_mac            ; 1                           ;
 ; boundary_port         ; 31                          ;
 ; generic_pll           ; 2                           ;
 ; stratixv_ram_block    ; 96                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.01                        ;
+; Max LUT depth         ; 4.40                        ;
+; Average LUT depth     ; 2.31                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1039,7 +1041,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Tue Nov 15 14:58:34 2022
+    Info: Processing started: Tue Nov 15 15:45:13 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab3 -c lab3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1081,6 +1083,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file VGA_con
 Info (12021): Found 2 design units, including 1 entities, in source file VGA_controller_mem_3.vhd
     Info (12022): Found design unit 1: VGA_controller_mem_3-Behav File: /home/andreasb/intelFPGA_lite/21.1/lab3/VGA_controller_mem_3.vhd Line: 24
     Info (12023): Found entity 1: VGA_controller_mem_3 File: /home/andreasb/intelFPGA_lite/21.1/lab3/VGA_controller_mem_3.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file VGA_controller_2.vhd
+    Info (12022): Found design unit 1: VGA_controller_2-Behav File: /home/andreasb/intelFPGA_lite/21.1/lab3/VGA_controller_2.vhd Line: 24
+    Info (12023): Found entity 1: VGA_controller_2 File: /home/andreasb/intelFPGA_lite/21.1/lab3/VGA_controller_2.vhd Line: 5
 Info (12127): Elaborating entity "VGA_controller_mem_3" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at VGA_controller_mem_3.vhd(13): used explicit default value for signal "VGA_BLANK_N" because signal was never assigned a value File: /home/andreasb/intelFPGA_lite/21.1/lab3/VGA_controller_mem_3.vhd Line: 13
 Warning (10540): VHDL Signal Declaration warning at VGA_controller_mem_3.vhd(16): used explicit default value for signal "VGA_SYNC_N" because signal was never assigned a value File: /home/andreasb/intelFPGA_lite/21.1/lab3/VGA_controller_mem_3.vhd Line: 16
@@ -1966,16 +1971,16 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
     Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 8 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 267 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 278 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 137 logic cells
+    Info (21061): Implemented 148 logic cells
     Info (21064): Implemented 96 RAM segments
     Info (21065): Implemented 2 PLLs
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 622 warnings
-    Info: Peak virtual memory: 546 megabytes
-    Info: Processing ended: Tue Nov 15 14:58:41 2022
+    Info: Peak virtual memory: 548 megabytes
+    Info: Processing ended: Tue Nov 15 15:45:20 2022
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:16
 

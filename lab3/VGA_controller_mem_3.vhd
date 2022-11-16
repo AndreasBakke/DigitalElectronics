@@ -156,7 +156,7 @@ BEGIN
         WHEN c=>
             h_sync <= '1';
 				IF currstate_v = c THEN --output logic
-					 IF unsigned(v_count) < 176 AND unsigned(h_count) <144 THEN
+					 IF unsigned(v_count) < 144 AND unsigned(h_count) <176 THEN
 						VGA_R <= mem_r ; VGA_G <= mem_g; VGA_B <= mem_b;
 					  ELSE
 						VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
@@ -224,10 +224,10 @@ BEGIN
 	 mem_update: PROCESS(h_count)
 	 BEGIN
 		IF currstate_v = c AND currstate_h = c THEN
-			 IF unsigned(v_count) > 176 THEN
-			 	mem_addr <= (others => '0');
-			 ELSIF unsigned(h_count) <144 THEN
-				mem_addr <= std_logic_vector(unsigned(v_count)*176 + unsigned(h_count))(14 DOWNTO 0);
+			 IF unsigned(v_count) >= 144 THEN
+			 	mem_addr <= (Others => '0');
+			 ELSIF unsigned(h_count) <176 THEN
+				mem_addr <= std_logic_vector(unsigned(v_count)*176 + unsigned(h_count))(14 DOWNTO 0); --OBS this is bad... But it works
 			END IF;
 		END IF;
 	 

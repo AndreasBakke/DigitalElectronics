@@ -1,5 +1,5 @@
 Timing Analyzer report for lab3
-Tue Nov 15 15:02:50 2022
+Tue Nov 15 15:49:35 2022
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 
 
@@ -100,14 +100,14 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.49        ;
+; Average used               ; 1.54        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  16.5%      ;
-;     Processor 3            ;  16.5%      ;
-;     Processor 4            ;  16.4%      ;
+;     Processor 2            ;  18.1%      ;
+;     Processor 3            ;  18.0%      ;
+;     Processor 4            ;  17.9%      ;
 +----------------------------+-------------+
 
 
@@ -126,14 +126,14 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------+-----------+--------+------------+--------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+---------------------------------------------------------------------------+--------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                                                               ;
-+-----------+-----------------+-----------------------------------------------------------------------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name                                                                  ; Note ;
-+-----------+-----------------+-----------------------------------------------------------------------------+------+
-; 81.62 MHz ; 81.62 MHz       ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 129.0 MHz ; 129.0 MHz       ; inc_v                                                                       ;      ;
-+-----------+-----------------+-----------------------------------------------------------------------------+------+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                                ;
++------------+-----------------+-----------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                  ; Note ;
++------------+-----------------+-----------------------------------------------------------------------------+------+
+; 85.58 MHz  ; 85.58 MHz       ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 109.88 MHz ; 109.88 MHz      ; inc_v                                                                       ;      ;
++------------+-----------------+-----------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -148,23 +148,23 @@ HTML report is unavailable in plain text report export.
 +-----------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                       ; Slack   ; End Point TNS ;
 +-----------------------------------------------------------------------------+---------+---------------+
-; currstate_h.c                                                               ; -12.162 ; -171.774      ;
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -8.753  ; -10793.087    ;
-; inc_v                                                                       ; -8.425  ; -84.225       ;
-; currstate_h.a                                                               ; -7.378  ; -7.378        ;
+; currstate_h.c                                                               ; -13.475 ; -188.753      ;
+; inc_v                                                                       ; -8.386  ; -82.882       ;
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -8.192  ; -9303.790     ;
+; currstate_h.a                                                               ; -7.250  ; -7.250        ;
 +-----------------------------------------------------------------------------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Hold Summary                                                                  ;
-+-----------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                       ; Slack ; End Point TNS ;
-+-----------------------------------------------------------------------------+-------+---------------+
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.375 ; 0.000         ;
-; currstate_h.c                                                               ; 0.884 ; 0.000         ;
-; inc_v                                                                       ; 1.348 ; 0.000         ;
-; currstate_h.a                                                               ; 5.643 ; 0.000         ;
-+-----------------------------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Hold Summary                                                                   ;
++-----------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                       ; Slack  ; End Point TNS ;
++-----------------------------------------------------------------------------+--------+---------------+
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -3.970 ; -3.970        ;
+; inc_v                                                                       ; 0.821  ; 0.000         ;
+; currstate_h.c                                                               ; 0.864  ; 0.000         ;
+; currstate_h.a                                                               ; 5.311  ; 0.000         ;
++-----------------------------------------------------------------------------+--------+---------------+
 
 
 ------------------------------------------
@@ -184,9 +184,9 @@ No paths to report.
 +-----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                       ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------+--------+---------------+
-; inc_v                                                                       ; -0.394 ; -5.330        ;
-; currstate_h.c                                                               ; 0.288  ; 0.000         ;
-; currstate_h.a                                                               ; 0.345  ; 0.000         ;
+; inc_v                                                                       ; -0.394 ; -5.139        ;
+; currstate_h.a                                                               ; 0.298  ; 0.000         ;
+; currstate_h.c                                                               ; 0.300  ; 0.000         ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; CLOCK_50                                                                    ; 9.900  ; 0.000         ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.756 ; 0.000         ;
@@ -200,19 +200,19 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 2
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 38.762 ns
+Worst Case Available Settling Time: 39.058 ns
 
 
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                                                                ;
-+-----------+-----------------+-----------------------------------------------------------------------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name                                                                  ; Note ;
-+-----------+-----------------+-----------------------------------------------------------------------------+------+
-; 85.1 MHz  ; 85.1 MHz        ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
-; 132.4 MHz ; 132.4 MHz       ; inc_v                                                                       ;      ;
-+-----------+-----------------+-----------------------------------------------------------------------------+------+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                                 ;
++------------+-----------------+-----------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                  ; Note ;
++------------+-----------------+-----------------------------------------------------------------------------+------+
+; 89.38 MHz  ; 89.38 MHz       ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 114.56 MHz ; 114.56 MHz      ; inc_v                                                                       ;      ;
++------------+-----------------+-----------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -221,23 +221,23 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-----------------------------------------------------------------------------+---------+---------------+
 ; Clock                                                                       ; Slack   ; End Point TNS ;
 +-----------------------------------------------------------------------------+---------+---------------+
-; currstate_h.c                                                               ; -12.113 ; -171.729      ;
-; inc_v                                                                       ; -8.389  ; -83.865       ;
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -7.955  ; -9782.213     ;
-; currstate_h.a                                                               ; -7.399  ; -7.399        ;
+; currstate_h.c                                                               ; -13.618 ; -190.456      ;
+; inc_v                                                                       ; -8.341  ; -82.415       ;
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -7.410  ; -8358.331     ;
+; currstate_h.a                                                               ; -7.293  ; -7.293        ;
 +-----------------------------------------------------------------------------+---------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Hold Summary                                                                   ;
-+-----------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                       ; Slack ; End Point TNS ;
-+-----------------------------------------------------------------------------+-------+---------------+
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.392 ; 0.000         ;
-; currstate_h.c                                                               ; 0.777 ; 0.000         ;
-; inc_v                                                                       ; 1.304 ; 0.000         ;
-; currstate_h.a                                                               ; 5.692 ; 0.000         ;
-+-----------------------------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Hold Summary                                                                    ;
++-----------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                       ; Slack  ; End Point TNS ;
++-----------------------------------------------------------------------------+--------+---------------+
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -4.172 ; -4.204        ;
+; currstate_h.c                                                               ; 0.788  ; 0.000         ;
+; inc_v                                                                       ; 0.797  ; 0.000         ;
+; currstate_h.a                                                               ; 5.345  ; 0.000         ;
++-----------------------------------------------------------------------------+--------+---------------+
 
 
 -----------------------------------------
@@ -257,9 +257,9 @@ No paths to report.
 +-----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                       ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------+--------+---------------+
-; inc_v                                                                       ; -0.394 ; -5.200        ;
-; currstate_h.c                                                               ; 0.293  ; 0.000         ;
-; currstate_h.a                                                               ; 0.354  ; 0.000         ;
+; inc_v                                                                       ; -0.394 ; -5.167        ;
+; currstate_h.a                                                               ; 0.274  ; 0.000         ;
+; currstate_h.c                                                               ; 0.338  ; 0.000         ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; CLOCK_50                                                                    ; 9.926  ; 0.000         ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.734 ; 0.000         ;
@@ -273,7 +273,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 2
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 38.765 ns
+Worst Case Available Settling Time: 39.059 ns
 
 
 
@@ -283,23 +283,23 @@ Worst Case Available Settling Time: 38.765 ns
 +-----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                       ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------+--------+---------------+
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.828 ; -8493.470     ;
-; currstate_h.c                                                               ; -6.682 ; -92.148       ;
-; inc_v                                                                       ; -4.414 ; -44.130       ;
-; currstate_h.a                                                               ; -3.631 ; -3.631        ;
+; currstate_h.c                                                               ; -7.173 ; -98.729       ;
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -6.510 ; -7315.460     ;
+; inc_v                                                                       ; -5.099 ; -50.034       ;
+; currstate_h.a                                                               ; -3.513 ; -3.513        ;
 +-----------------------------------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Fast 1100mV 85C Model Hold Summary                                                                  ;
-+-----------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                       ; Slack ; End Point TNS ;
-+-----------------------------------------------------------------------------+-------+---------------+
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.181 ; 0.000         ;
-; currstate_h.c                                                               ; 0.567 ; 0.000         ;
-; inc_v                                                                       ; 0.752 ; 0.000         ;
-; currstate_h.a                                                               ; 3.206 ; 0.000         ;
-+-----------------------------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 85C Model Hold Summary                                                                   ;
++-----------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                       ; Slack  ; End Point TNS ;
++-----------------------------------------------------------------------------+--------+---------------+
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.234 ; -2.234        ;
+; inc_v                                                                       ; 0.426  ; 0.000         ;
+; currstate_h.c                                                               ; 0.526  ; 0.000         ;
+; currstate_h.a                                                               ; 2.989  ; 0.000         ;
++-----------------------------------------------------------------------------+--------+---------------+
 
 
 ------------------------------------------
@@ -319,9 +319,9 @@ No paths to report.
 +-----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                       ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------+--------+---------------+
-; inc_v                                                                       ; 0.100  ; 0.000         ;
-; currstate_h.c                                                               ; 0.322  ; 0.000         ;
-; currstate_h.a                                                               ; 0.445  ; 0.000         ;
+; inc_v                                                                       ; 0.094  ; 0.000         ;
+; currstate_h.c                                                               ; 0.326  ; 0.000         ;
+; currstate_h.a                                                               ; 0.366  ; 0.000         ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; CLOCK_50                                                                    ; 9.643  ; 0.000         ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.874 ; 0.000         ;
@@ -335,7 +335,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 2
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 39.267 ns
+Worst Case Available Settling Time: 39.468 ns
 
 
 
@@ -345,23 +345,23 @@ Worst Case Available Settling Time: 39.267 ns
 +-----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                       ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------+--------+---------------+
-; currstate_h.c                                                               ; -6.353 ; -88.369       ;
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -5.447 ; -6723.955     ;
-; inc_v                                                                       ; -4.250 ; -42.490       ;
-; currstate_h.a                                                               ; -3.533 ; -3.533        ;
+; currstate_h.c                                                               ; -6.887 ; -95.208       ;
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -5.175 ; -5727.641     ;
+; inc_v                                                                       ; -4.424 ; -43.374       ;
+; currstate_h.a                                                               ; -3.425 ; -3.425        ;
 +-----------------------------------------------------------------------------+--------+---------------+
 
 
-+-----------------------------------------------------------------------------------------------------+
-; Fast 1100mV 0C Model Hold Summary                                                                   ;
-+-----------------------------------------------------------------------------+-------+---------------+
-; Clock                                                                       ; Slack ; End Point TNS ;
-+-----------------------------------------------------------------------------+-------+---------------+
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 0.171 ; 0.000         ;
-; currstate_h.c                                                               ; 0.540 ; 0.000         ;
-; inc_v                                                                       ; 0.672 ; 0.000         ;
-; currstate_h.a                                                               ; 3.162 ; 0.000         ;
-+-----------------------------------------------------------------------------+-------+---------------+
++------------------------------------------------------------------------------------------------------+
+; Fast 1100mV 0C Model Hold Summary                                                                    ;
++-----------------------------------------------------------------------------+--------+---------------+
+; Clock                                                                       ; Slack  ; End Point TNS ;
++-----------------------------------------------------------------------------+--------+---------------+
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -2.376 ; -2.376        ;
+; inc_v                                                                       ; 0.384  ; 0.000         ;
+; currstate_h.c                                                               ; 0.504  ; 0.000         ;
+; currstate_h.a                                                               ; 2.964  ; 0.000         ;
++-----------------------------------------------------------------------------+--------+---------------+
 
 
 -----------------------------------------
@@ -381,9 +381,9 @@ No paths to report.
 +-----------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                       ; Slack  ; End Point TNS ;
 +-----------------------------------------------------------------------------+--------+---------------+
-; inc_v                                                                       ; 0.117  ; 0.000         ;
+; inc_v                                                                       ; 0.105  ; 0.000         ;
 ; currstate_h.c                                                               ; 0.356  ; 0.000         ;
-; currstate_h.a                                                               ; 0.449  ; 0.000         ;
+; currstate_h.a                                                               ; 0.380  ; 0.000         ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; CLOCK_50                                                                    ; 9.632  ; 0.000         ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 18.878 ; 0.000         ;
@@ -397,31 +397,31 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 2
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 39.320 ns
+Worst Case Available Settling Time: 39.496 ns
 
 
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multicorner Timing Analysis Summary                                                                                                          ;
-+------------------------------------------------------------------------------+------------+-------+----------+---------+---------------------+
-; Clock                                                                        ; Setup      ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
-+------------------------------------------------------------------------------+------------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                             ; -12.162    ; 0.171 ; N/A      ; N/A     ; -0.394              ;
-;  CLOCK_50                                                                    ; N/A        ; N/A   ; N/A      ; N/A     ; 9.632               ;
-;  currstate_h.a                                                               ; -7.399     ; 3.162 ; N/A      ; N/A     ; 0.345               ;
-;  currstate_h.c                                                               ; -12.162    ; 0.540 ; N/A      ; N/A     ; 0.288               ;
-;  inc_v                                                                       ; -8.425     ; 0.672 ; N/A      ; N/A     ; -0.394              ;
-;  vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A        ; N/A   ; N/A      ; N/A     ; 1.666               ;
-;  vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -8.753     ; 0.171 ; N/A      ; N/A     ; 18.734              ;
-; Design-wide TNS                                                              ; -11056.464 ; 0.0   ; 0.0      ; 0.0     ; -5.33               ;
-;  CLOCK_50                                                                    ; N/A        ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  currstate_h.a                                                               ; -7.399     ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  currstate_h.c                                                               ; -171.774   ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-;  inc_v                                                                       ; -84.225    ; 0.000 ; N/A      ; N/A     ; -5.330              ;
-;  vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A        ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -10793.087 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
-+------------------------------------------------------------------------------+------------+-------+----------+---------+---------------------+
++------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
+; Clock                                                                        ; Setup     ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
+; Worst-case Slack                                                             ; -13.618   ; -4.172 ; N/A      ; N/A     ; -0.394              ;
+;  CLOCK_50                                                                    ; N/A       ; N/A    ; N/A      ; N/A     ; 9.632               ;
+;  currstate_h.a                                                               ; -7.293    ; 2.964  ; N/A      ; N/A     ; 0.274               ;
+;  currstate_h.c                                                               ; -13.618   ; 0.504  ; N/A      ; N/A     ; 0.300               ;
+;  inc_v                                                                       ; -8.386    ; 0.384  ; N/A      ; N/A     ; -0.394              ;
+;  vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A    ; N/A      ; N/A     ; 1.666               ;
+;  vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -8.192    ; -4.172 ; N/A      ; N/A     ; 18.734              ;
+; Design-wide TNS                                                              ; -9582.675 ; -4.204 ; 0.0      ; 0.0     ; -5.167              ;
+;  CLOCK_50                                                                    ; N/A       ; N/A    ; N/A      ; N/A     ; 0.000               ;
+;  currstate_h.a                                                               ; -7.293    ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  currstate_h.c                                                               ; -190.456  ; 0.000  ; N/A      ; N/A     ; 0.000               ;
+;  inc_v                                                                       ; -82.882   ; 0.000  ; N/A      ; N/A     ; -5.167              ;
+;  vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]   ; N/A       ; N/A    ; N/A      ; N/A     ; 0.000               ;
+;  vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; -9303.790 ; -4.204 ; N/A      ; N/A     ; 0.000               ;
++------------------------------------------------------------------------------+-----------+--------+----------+---------+---------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -501,7 +501,7 @@ Worst Case Available Settling Time: 39.320 ns
 ; VGA_B[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
 ; VGA_CLK     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
-; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.07e-07 V                   ; 2.36 V              ; -0.0231 V           ; 0.14 V                               ; 0.089 V                              ; 4.52e-10 s                  ; 4.35e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.07e-07 V                  ; 2.36 V             ; -0.0231 V          ; 0.14 V                              ; 0.089 V                             ; 4.52e-10 s                 ; 4.35e-10 s                 ; No                        ; Yes                       ;
+; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
 ; VGA_HS      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0557 V           ; 0.175 V                              ; 0.114 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0557 V          ; 0.175 V                             ; 0.114 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
 ; VGA_VS      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.6e-07 V                    ; 2.41 V              ; -0.0463 V           ; 0.201 V                              ; 0.131 V                              ; 4.61e-10 s                  ; 4.53e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.6e-07 V                   ; 2.41 V             ; -0.0463 V          ; 0.201 V                             ; 0.131 V                             ; 4.61e-10 s                 ; 4.53e-10 s                 ; No                        ; Yes                       ;
 ; VGA_SYNC_N  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.52e-07 V                   ; 2.42 V              ; -0.0568 V           ; 0.173 V                              ; 0.113 V                              ; 4.5e-10 s                   ; 4.35e-10 s                  ; No                         ; No                         ; 2.32 V                      ; 3.52e-07 V                  ; 2.42 V             ; -0.0568 V          ; 0.173 V                             ; 0.113 V                             ; 4.5e-10 s                  ; 4.35e-10 s                 ; No                        ; No                        ;
@@ -538,7 +538,7 @@ Worst Case Available Settling Time: 39.320 ns
 ; VGA_B[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
 ; VGA_CLK     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
-; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.49e-05 V                   ; 2.34 V              ; -0.0118 V           ; 0.182 V                              ; 0.051 V                              ; 4.81e-10 s                  ; 4.83e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.49e-05 V                  ; 2.34 V             ; -0.0118 V          ; 0.182 V                             ; 0.051 V                             ; 4.81e-10 s                 ; 4.83e-10 s                 ; Yes                       ; Yes                       ;
+; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
 ; VGA_HS      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.037 V            ; 0.188 V                              ; 0.158 V                              ; 4.67e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.037 V           ; 0.188 V                             ; 0.158 V                             ; 4.67e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
 ; VGA_VS      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.96e-05 V                   ; 2.38 V              ; -0.0306 V           ; 0.23 V                               ; 0.206 V                              ; 4.83e-10 s                  ; 5.01e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.96e-05 V                  ; 2.38 V             ; -0.0306 V          ; 0.23 V                              ; 0.206 V                             ; 4.83e-10 s                 ; 5.01e-10 s                 ; No                        ; Yes                       ;
 ; VGA_SYNC_N  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.88e-05 V                   ; 2.39 V              ; -0.0374 V           ; 0.189 V                              ; 0.158 V                              ; 4.66e-10 s                  ; 4.67e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 3.88e-05 V                  ; 2.39 V             ; -0.0374 V          ; 0.189 V                             ; 0.158 V                             ; 4.66e-10 s                 ; 4.67e-10 s                 ; No                        ; Yes                       ;
@@ -575,7 +575,7 @@ Worst Case Available Settling Time: 39.320 ns
 ; VGA_B[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
 ; VGA_CLK     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
-; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 3.54e-06 V                   ; 2.81 V              ; -0.0578 V           ; 0.303 V                              ; 0.28 V                               ; 2.93e-10 s                  ; 3.01e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 3.54e-06 V                  ; 2.81 V             ; -0.0578 V          ; 0.303 V                             ; 0.28 V                              ; 2.93e-10 s                 ; 3.01e-10 s                 ; No                        ; No                        ;
+; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
 ; VGA_HS      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.121 V            ; 0.326 V                              ; 0.297 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.121 V           ; 0.326 V                             ; 0.297 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
 ; VGA_VS      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.25e-06 V                   ; 2.9 V               ; -0.107 V            ; 0.378 V                              ; 0.16 V                               ; 2.87e-10 s                  ; 4.28e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 4.25e-06 V                  ; 2.9 V              ; -0.107 V           ; 0.378 V                             ; 0.16 V                              ; 2.87e-10 s                 ; 4.28e-10 s                 ; No                        ; No                        ;
 ; VGA_SYNC_N  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 4.14e-06 V                   ; 2.91 V              ; -0.119 V            ; 0.326 V                              ; 0.298 V                              ; 2.74e-10 s                  ; 2.8e-10 s                   ; No                         ; No                         ; 2.75 V                      ; 4.14e-06 V                  ; 2.91 V             ; -0.119 V           ; 0.326 V                             ; 0.298 V                             ; 2.74e-10 s                 ; 2.8e-10 s                  ; No                        ; No                        ;
@@ -612,7 +612,7 @@ Worst Case Available Settling Time: 39.320 ns
 ; VGA_B[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; VGA_B[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
 ; VGA_CLK     ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
-; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000213 V                   ; 2.79 V              ; -0.0324 V           ; 0.139 V                              ; 0.119 V                              ; 4.42e-10 s                  ; 4.33e-10 s                  ; No                         ; Yes                        ; 2.75 V                      ; 0.000213 V                  ; 2.79 V             ; -0.0324 V          ; 0.139 V                             ; 0.119 V                             ; 4.42e-10 s                 ; 4.33e-10 s                 ; No                        ; Yes                       ;
+; VGA_BLANK_N ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
 ; VGA_HS      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0814 V           ; 0.36 V                               ; 0.156 V                              ; 3e-10 s                     ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0814 V          ; 0.36 V                              ; 0.156 V                             ; 3e-10 s                    ; 4.34e-10 s                 ; No                        ; No                        ;
 ; VGA_VS      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000247 V                   ; 2.85 V              ; -0.0711 V           ; 0.204 V                              ; 0.181 V                              ; 4.55e-10 s                  ; 4.49e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000247 V                  ; 2.85 V             ; -0.0711 V          ; 0.204 V                             ; 0.181 V                             ; 4.55e-10 s                 ; 4.49e-10 s                 ; No                        ; No                        ;
 ; VGA_SYNC_N  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.75 V                       ; 0.000242 V                   ; 2.86 V              ; -0.0805 V           ; 0.358 V                              ; 0.156 V                              ; 3.01e-10 s                  ; 4.34e-10 s                  ; No                         ; No                         ; 2.75 V                      ; 0.000242 V                  ; 2.86 V             ; -0.0805 V          ; 0.358 V                             ; 0.156 V                             ; 3.01e-10 s                 ; 4.34e-10 s                 ; No                        ; No                        ;
@@ -625,13 +625,13 @@ Worst Case Available Settling Time: 39.320 ns
 ; From Clock                                                                  ; To Clock                                                                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+----------+----------+----------+----------+
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; currstate_h.a                                                               ; 1        ; 0        ; 0        ; 0        ;
-; inc_v                                                                       ; currstate_h.c                                                               ; 0        ; 0        ; 315      ; 0        ;
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; currstate_h.c                                                               ; 0        ; 0        ; 150      ; 0        ;
-; inc_v                                                                       ; inc_v                                                                       ; 325      ; 0        ; 0        ; 0        ;
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inc_v                                                                       ; 50       ; 0        ; 0        ; 0        ;
+; inc_v                                                                       ; currstate_h.c                                                               ; 0        ; 0        ; 1290     ; 0        ;
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; currstate_h.c                                                               ; 0        ; 0        ; 1200     ; 0        ;
+; inc_v                                                                       ; inc_v                                                                       ; 335      ; 0        ; 0        ; 0        ;
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inc_v                                                                       ; 40       ; 0        ; 0        ; 0        ;
 ; currstate_h.a                                                               ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 12       ; 12       ; 0        ; 0        ;
 ; currstate_h.c                                                               ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 12       ; 1454     ; 0        ; 0        ;
-; inc_v                                                                       ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 60       ; 0        ; 0        ; 0        ;
+; inc_v                                                                       ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 53       ; 0        ; 0        ; 0        ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 415      ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -643,13 +643,13 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 ; From Clock                                                                  ; To Clock                                                                    ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+----------+----------+----------+----------+
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; currstate_h.a                                                               ; 1        ; 0        ; 0        ; 0        ;
-; inc_v                                                                       ; currstate_h.c                                                               ; 0        ; 0        ; 315      ; 0        ;
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; currstate_h.c                                                               ; 0        ; 0        ; 150      ; 0        ;
-; inc_v                                                                       ; inc_v                                                                       ; 325      ; 0        ; 0        ; 0        ;
-; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inc_v                                                                       ; 50       ; 0        ; 0        ; 0        ;
+; inc_v                                                                       ; currstate_h.c                                                               ; 0        ; 0        ; 1290     ; 0        ;
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; currstate_h.c                                                               ; 0        ; 0        ; 1200     ; 0        ;
+; inc_v                                                                       ; inc_v                                                                       ; 335      ; 0        ; 0        ; 0        ;
+; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; inc_v                                                                       ; 40       ; 0        ; 0        ; 0        ;
 ; currstate_h.a                                                               ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 12       ; 12       ; 0        ; 0        ;
 ; currstate_h.c                                                               ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 12       ; 1454     ; 0        ; 0        ;
-; inc_v                                                                       ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 60       ; 0        ; 0        ; 0        ;
+; inc_v                                                                       ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 53       ; 0        ; 0        ; 0        ;
 ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk ; 415      ; 0        ; 0        ; 0        ;
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
@@ -790,7 +790,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Lite Edition
-    Info: Processing started: Tue Nov 15 15:02:45 2022
+    Info: Processing started: Tue Nov 15 15:49:30 2022
 Info: Command: quartus_sta lab3 -c lab3
 Info: qsta_default_script.tcl version: #1
 Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
@@ -1393,28 +1393,28 @@ Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -12.162
+Info (332146): Worst-case setup slack is -13.475
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -12.162            -171.774 currstate_h.c 
-    Info (332119):    -8.753          -10793.087 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    -8.425             -84.225 inc_v 
-    Info (332119):    -7.378              -7.378 currstate_h.a 
-Info (332146): Worst-case hold slack is 0.375
+    Info (332119):   -13.475            -188.753 currstate_h.c 
+    Info (332119):    -8.386             -82.882 inc_v 
+    Info (332119):    -8.192           -9303.790 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -7.250              -7.250 currstate_h.a 
+Info (332146): Worst-case hold slack is -3.970
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.375               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.884               0.000 currstate_h.c 
-    Info (332119):     1.348               0.000 inc_v 
-    Info (332119):     5.643               0.000 currstate_h.a 
+    Info (332119):    -3.970              -3.970 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.821               0.000 inc_v 
+    Info (332119):     0.864               0.000 currstate_h.c 
+    Info (332119):     5.311               0.000 currstate_h.a 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394              -5.330 inc_v 
-    Info (332119):     0.288               0.000 currstate_h.c 
-    Info (332119):     0.345               0.000 currstate_h.a 
+    Info (332119):    -0.394              -5.139 inc_v 
+    Info (332119):     0.298               0.000 currstate_h.a 
+    Info (332119):     0.300               0.000 currstate_h.c 
     Info (332119):     1.666               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.900               0.000 CLOCK_50 
     Info (332119):    18.756               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
@@ -1423,7 +1423,7 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 2
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 38.762 ns
+    Info (332114): Worst Case Available Settling Time: 39.058 ns
     Info (332114): 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
@@ -1436,28 +1436,28 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -12.113
+Info (332146): Worst-case setup slack is -13.618
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):   -12.113            -171.729 currstate_h.c 
-    Info (332119):    -8.389             -83.865 inc_v 
-    Info (332119):    -7.955           -9782.213 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    -7.399              -7.399 currstate_h.a 
-Info (332146): Worst-case hold slack is 0.392
+    Info (332119):   -13.618            -190.456 currstate_h.c 
+    Info (332119):    -8.341             -82.415 inc_v 
+    Info (332119):    -7.410           -8358.331 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -7.293              -7.293 currstate_h.a 
+Info (332146): Worst-case hold slack is -4.172
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.392               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.777               0.000 currstate_h.c 
-    Info (332119):     1.304               0.000 inc_v 
-    Info (332119):     5.692               0.000 currstate_h.a 
+    Info (332119):    -4.172              -4.204 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.788               0.000 currstate_h.c 
+    Info (332119):     0.797               0.000 inc_v 
+    Info (332119):     5.345               0.000 currstate_h.a 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -0.394
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.394              -5.200 inc_v 
-    Info (332119):     0.293               0.000 currstate_h.c 
-    Info (332119):     0.354               0.000 currstate_h.a 
+    Info (332119):    -0.394              -5.167 inc_v 
+    Info (332119):     0.274               0.000 currstate_h.a 
+    Info (332119):     0.338               0.000 currstate_h.c 
     Info (332119):     1.666               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.926               0.000 CLOCK_50 
     Info (332119):    18.734               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
@@ -1466,7 +1466,7 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 2
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 38.765 ns
+    Info (332114): Worst Case Available Settling Time: 39.059 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
@@ -1479,28 +1479,28 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.828
+Info (332146): Worst-case setup slack is -7.173
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.828           -8493.470 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    -6.682             -92.148 currstate_h.c 
-    Info (332119):    -4.414             -44.130 inc_v 
-    Info (332119):    -3.631              -3.631 currstate_h.a 
-Info (332146): Worst-case hold slack is 0.181
+    Info (332119):    -7.173             -98.729 currstate_h.c 
+    Info (332119):    -6.510           -7315.460 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -5.099             -50.034 inc_v 
+    Info (332119):    -3.513              -3.513 currstate_h.a 
+Info (332146): Worst-case hold slack is -2.234
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.181               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.567               0.000 currstate_h.c 
-    Info (332119):     0.752               0.000 inc_v 
-    Info (332119):     3.206               0.000 currstate_h.a 
+    Info (332119):    -2.234              -2.234 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.426               0.000 inc_v 
+    Info (332119):     0.526               0.000 currstate_h.c 
+    Info (332119):     2.989               0.000 currstate_h.a 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.100
+Info (332146): Worst-case minimum pulse width slack is 0.094
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.100               0.000 inc_v 
-    Info (332119):     0.322               0.000 currstate_h.c 
-    Info (332119):     0.445               0.000 currstate_h.a 
+    Info (332119):     0.094               0.000 inc_v 
+    Info (332119):     0.326               0.000 currstate_h.c 
+    Info (332119):     0.366               0.000 currstate_h.a 
     Info (332119):     1.666               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.643               0.000 CLOCK_50 
     Info (332119):    18.874               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
@@ -1509,7 +1509,7 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 2
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 39.267 ns
+    Info (332114): Worst Case Available Settling Time: 39.468 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332097): The following timing edges are non-unate.  The Timing Analyzer will assume pos-unate behavior for these edges in the clock network.
@@ -1520,28 +1520,28 @@ Info (332097): The following timing edges are non-unate.  The Timing Analyzer wi
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -6.353
+Info (332146): Worst-case setup slack is -6.887
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -6.353             -88.369 currstate_h.c 
-    Info (332119):    -5.447           -6723.955 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    -4.250             -42.490 inc_v 
-    Info (332119):    -3.533              -3.533 currstate_h.a 
-Info (332146): Worst-case hold slack is 0.171
+    Info (332119):    -6.887             -95.208 currstate_h.c 
+    Info (332119):    -5.175           -5727.641 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    -4.424             -43.374 inc_v 
+    Info (332119):    -3.425              -3.425 currstate_h.a 
+Info (332146): Worst-case hold slack is -2.376
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.171               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.540               0.000 currstate_h.c 
-    Info (332119):     0.672               0.000 inc_v 
-    Info (332119):     3.162               0.000 currstate_h.a 
+    Info (332119):    -2.376              -2.376 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.384               0.000 inc_v 
+    Info (332119):     0.504               0.000 currstate_h.c 
+    Info (332119):     2.964               0.000 currstate_h.a 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
-Info (332146): Worst-case minimum pulse width slack is 0.117
+Info (332146): Worst-case minimum pulse width slack is 0.105
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.117               0.000 inc_v 
+    Info (332119):     0.105               0.000 inc_v 
     Info (332119):     0.356               0.000 currstate_h.c 
-    Info (332119):     0.449               0.000 currstate_h.a 
+    Info (332119):     0.380               0.000 currstate_h.a 
     Info (332119):     1.666               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     9.632               0.000 CLOCK_50 
     Info (332119):    18.878               0.000 vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk 
@@ -1550,13 +1550,13 @@ Info (332114): Report Metastability: Found 2 synchronizer chains.
     Info (332114): Number of Synchronizer Chains Found: 2
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 39.320 ns
+    Info (332114): Worst Case Available Settling Time: 39.496 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 579 warnings
-    Info: Peak virtual memory: 910 megabytes
-    Info: Processing ended: Tue Nov 15 15:02:50 2022
+    Info: Peak virtual memory: 906 megabytes
+    Info: Processing ended: Tue Nov 15 15:49:35 2022
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:07
 

@@ -47,6 +47,7 @@ ARCHITECTURE Behav of VGA_controller IS
     SIGNAL key_not, clk, buff_clk_vga, l, rst_n, h_sync, v_sync: std_logic;
     SIGNAL clear_h, clear_v: std_logic;
     SIGNAL h_count, v_count: std_logic_vector(9 DOWNTO 0);
+	 
     CONSTANT a_h_count : integer := 96; ---targetcount (0 indexed)
     CONSTANT b_h_count : integer := 48;
     CONSTANT c_h_count : integer := 640;
@@ -203,3 +204,6 @@ BEGIN
     END PROCESS; --v_combLogic
 
 END Behav;
+
+
+--Feil: tellerene er ikke 0 når vi går inn i ny state!
