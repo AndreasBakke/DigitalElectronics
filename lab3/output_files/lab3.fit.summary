@@ -1,11 +1,11 @@
-Fitter Status : Successful - Tue Nov 15 15:49:24 2022
+Fitter Status : Successful - Tue Nov 22 12:32:29 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : lab3
 Top-level Entity Name : VGA_controller_mem_3
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 94 / 32,070 ( < 1 % )
+Logic utilization (in ALMs) : 87 / 32,070 ( < 1 % )
 Total registers : 32
 Total pins : 31 / 457 ( 7 % )
 Total virtual pins : 0

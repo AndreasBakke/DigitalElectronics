@@ -296,7 +296,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : AG6       :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG7       :        :                   :         : 3A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG8       :        :                   :         : 3A        :                
 GND                          : AG9       : gnd    :                   :         :           :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : AG10      :        :                   :         : 3B        :                
+VGA_BLANK_N                  : AG10      : output : 2.5 V             :         : 3B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG11      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG12      :        :                   :         : 3B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AG13      :        :                   :         : 3B        :                
@@ -396,7 +396,7 @@ VREFB4AN0                    : AK17      : power  :                   :         
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK18      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK19      :        :                   :         : 4A        :                
 VCCIO4A                      : AK20      : power  :                   : 2.5V    : 4A        :                
-VGA_BLANK_N                  : AK21      : output : 2.5 V             :         : 4A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AK21      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK22      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK23      :        :                   :         : 4A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : AK24      :        :                   :         : 4A        :                
