@@ -2,4 +2,100 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
+Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -7.422
+TNS   : -469.036
+
+Type  : Slow 1100mV 85C Model Setup 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : -1.550
+TNS   : -14.707
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.324
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : 0.800
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -41.002
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : -0.394
+TNS   : -5.643
+
+Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -7.160
+TNS   : -451.705
+
+Type  : Slow 1100mV 0C Model Setup 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : -1.690
+TNS   : -16.309
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.306
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : 0.954
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.394
+TNS   : -44.938
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : -0.394
+TNS   : -5.202
+
+Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
+Slack : -4.515
+TNS   : -284.886
+
+Type  : Fast 1100mV 85C Model Setup 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : -0.588
+TNS   : -5.394
+
+Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.193
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : 0.390
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.088
+TNS   : -6.740
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : -0.017
+TNS   : -0.158
+
+Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
+Slack : -3.900
+TNS   : -245.756
+
+Type  : Fast 1100mV 0C Model Setup 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : -0.628
+TNS   : -5.868
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.173
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : 0.459
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : -0.089
+TNS   : -6.787
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'synchronous_counter:synchronus_counter_1|value[0]'
+Slack : 0.029
+TNS   : 0.000
+
 ------------------------------------------------------------

@@ -1,12 +1,12 @@
 
-State Machine - |VGA_controller_mem|currstate_v
+State Machine - |VGA_controller_mem_3|currstate_v
 Name currstate_v.d currstate_v.c currstate_v.b currstate_v.a 
 currstate_v.a 0 0 0 0 
 currstate_v.b 0 0 1 1 
 currstate_v.c 0 1 0 1 
 currstate_v.d 1 0 0 1 
 
-State Machine - |VGA_controller_mem|currstate_h
+State Machine - |VGA_controller_mem_3|currstate_h
 Name currstate_h.d currstate_h.c currstate_h.b currstate_h.a 
 currstate_h.a 0 0 0 0 
 currstate_h.b 0 0 1 1 

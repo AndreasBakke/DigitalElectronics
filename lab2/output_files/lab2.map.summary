@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Tue Oct 25 13:48:12 2022
+Analysis & Synthesis Status : Successful - Tue Nov 15 11:49:14 2022
 Quartus Prime Version : 21.1.1 Build 850 06/23/2022 SJ Lite Edition
 Revision Name : lab2
-Top-level Entity Name : programmable_flashing_digits
+Top-level Entity Name : pseudo_random_generator
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 0
-Total pins : 11
+Total registers : 84
+Total pins : 12
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

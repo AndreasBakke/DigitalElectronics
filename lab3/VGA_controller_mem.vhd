@@ -40,33 +40,33 @@ ARCHITECTURE Behav of VGA_controller_mem IS
         );
     END COMPONENT;
 	 
-	 COMPONENT img_rom_r IS
+	 COMPONENT img_rom_r_2 IS
 		 PORT
 		(
 			aclr		: IN STD_LOGIC  := '0';
-			address		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+			address		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 			clock		: IN STD_LOGIC  := '1';
 			rden		: IN STD_LOGIC  := '1';
 			q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 		);
 	 END COMPONENT;
 	 
-	 COMPONENT img_rom_b IS
+	 COMPONENT img_rom_b_2 IS
 		 PORT
 		(
 			aclr		: IN STD_LOGIC  := '0';
-			address		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+			address		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 			clock		: IN STD_LOGIC  := '1';
 			rden		: IN STD_LOGIC  := '1';
 			q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
 		);
 	 END COMPONENT;
 	 
-	 COMPONENT img_rom_g IS
+	 COMPONENT img_rom_g_2 IS
 		 PORT
 		(
 			aclr		: IN STD_LOGIC  := '0';
-			address		: IN STD_LOGIC_VECTOR (10 DOWNTO 0);
+			address		: IN STD_LOGIC_VECTOR (14 DOWNTO 0);
 			clock		: IN STD_LOGIC  := '1';
 			rden		: IN STD_LOGIC  := '1';
 			q		: OUT STD_LOGIC_VECTOR (7 DOWNTO 0)
@@ -77,22 +77,23 @@ ARCHITECTURE Behav of VGA_controller_mem IS
     TYPE StateType IS (a,b,c,d); --statnames used for both vsync and hsync
     SIGNAL currstate_h, nextstate_h, currstate_v, nextstate_v: StateType;
     
-    
+   
     SIGNAL key_not, clk, buff_clk_vga, l, rst_n, h_sync, v_sync: std_logic;
-    SIGNAL clear_h, clear_v: std_logic;
+    SIGNAL clear_h, clear_v: std_logic := '1';
     SIGNAL h_count, v_count: std_logic_vector(9 DOWNTO 0);
 	 SIGNAL mem_enable: std_logic;
 	 SIGNAL mem_r, mem_b, mem_g: std_logic_vector(7 DOWNTO 0);
-	 SIGNAL mem_addr: std_logic_vector(10 DOWNTO 0);
+	 SIGNAL mem_addr: std_logic_vector(14 DOWNTO 0) := (OTHERS => '0');
 	 SIGNAL mem_clock: std_logic;
+	 SIGNAL inc_v: std_logic;
 	 
 	 
-    CONSTANT a_h_count : integer := 96; ---targetcount (0 indexed)
+    CONSTANT a_h_count : integer := 96; ---targetcount
     CONSTANT b_h_count : integer := 48;
     CONSTANT c_h_count : integer := 640;
     CONSTANT d_h_count : integer := 16;
     
-    CONSTANT a_v_count : integer := 2; --targetcount (0 indexed counting)
+    CONSTANT a_v_count : integer := 2; --targetcount
     CONSTANT b_v_count : integer := 33;
     CONSTANT c_v_count : integer := 480;
     CONSTANT d_v_count : integer := 10;
@@ -106,41 +107,18 @@ BEGIN
     vgaPLL_0: vgaPLL PORT MAP(refclk => CLOCK_50, rst => key_not, outclk_0 => clk, outclk_1 => VGA_CLK, locked => l); --PLL for board
     rst_n <= KEY(0) AND l; -- Reset if either locked from pll or key_0 is 0
 
-	 mem_rom_r_1: img_rom_r PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => mem_enable, q=>mem_r);
-	 mem_rom_g_1: img_rom_g PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => mem_enable, q=>mem_g);
-	 mem_rom_b_1: img_rom_b PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => mem_enable, q=>mem_b);
+	 mem_rom_r_1: img_rom_r_2 PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => '1', q=>mem_r);
+	 mem_rom_g_1: img_rom_g_2 PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => '1', q=>mem_g);
+	 mem_rom_b_1: img_rom_b_2 PORT MAP(aclr => key_not, address => mem_addr, clock => clk, rden => '1', q=>mem_b);
     	 
 	 
-	 --Simulated pll for simulation:
-	 --VGA_CLK <= NOT clk;
---    l <= '1';
---    clockGenerator: PROl <= '1';
---    clockGenerator: PROCESS(CLOCK_50) IS BEGIN --creates 2 25MHZ signal
---        IF rising_edge(clock_50) THEN
---            if clk = '0' THEN
---                clk <= '1';
---            ELSE
---                clk <= '0';
---            END IF;
---        END IF;
---    END PROCESS;
---    CESS(CLOCK_50) IS BEGIN --creates 2 25MHZ signal
---        IF rising_edge(clock_50) THEN
---            if clk = '0' THEN
---                clk <= '1';
---            ELSE
---                clk <= '0';
---            END IF;
---        END IF;
---    END PROCESS;
-    
 
     h_counter: synchronous_counter
         GENERIC MAP(N => 10)
         PORT MAP(clk => clk, RSTn => rst_n, clear => clear_h, en => '1', UDn => '0', value => h_count);
     v_counter: synchronous_counter
         GENERIC MAP(N => 10)
-        PORT MAP(clk => h_sync, RSTn => rst_n, clear => clear_v, en => '1', UDn => '0', value => v_count);
+        PORT MAP(clk => inc_v, RSTn => rst_n, clear => clear_v, en => '1', UDn => '0', value => v_count);
 
     --Counters:
     
@@ -160,14 +138,16 @@ BEGIN
     BEGIN
     CASE currstate_h IS
        WHEN a=>
-            h_sync <= '0'; mem_enable <='0'; VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
+				inc_v <= '0';
+            h_sync <= '0'; VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
             IF unsigned(h_count) >= a_h_count THEN
                 nextstate_h <= b; clear_h <= '1';
             ELSE
                 nextstate_h <= a; clear_h <= '0';
+					 
             END IF;
         WHEN b=>
-            h_sync <= '1'; mem_enable <='0'; VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
+            h_sync <= '1'; VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
             IF unsigned(h_count) >= b_h_count THEN
                 nextstate_h <= c; clear_h <= '1';
             ELSE
@@ -175,15 +155,14 @@ BEGIN
             END IF;
         WHEN c=>
             h_sync <= '1';
-            IF currstate_v = c THEN --output logic
-                mem_enable <= '1';
-					 mem_addr <= std_logic_vector(unsigned(mem_addr)+1);
-                VGA_R <= (OTHERS => '1') ; VGA_G <= mem_g; VGA_B <= mem_b;
-                
-					 --Hvis dette ikke funker: lag eget klokkesignal for å lese! Posedge rett etter mem_enable, og neg rett etter "mem_disable"
-            ELSE
-                mem_enable <='0';
-                 VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
+				IF currstate_v = c THEN --output logic
+					 if unsigned(h_count) < 176 AND unsigned(v_count) < 144 THEN
+						VGA_R <= mem_r ; VGA_G <= mem_g; VGA_B <= mem_b;
+				    ELSE
+						VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
+					 END IF;
+            ELSE 
+                VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
             END IF;
             
             IF unsigned(h_count) >= c_h_count THEN --nextstate logic
@@ -192,9 +171,11 @@ BEGIN
                 nextstate_h <= c; clear_h <= '0';
             END IF;
          WHEN d=>
-            h_sync <= '1'; mem_enable <='0'; VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
+				 
+            h_sync <= '1';	VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '0');
             IF unsigned(h_count) >= d_h_count THEN --nextstate logic
                 nextstate_h <= a; clear_h <= '1';
+					 inc_v <= '1';
             ELSE
                 nextstate_h <= d; clear_h <= '0';
             END IF;
@@ -239,5 +220,17 @@ BEGIN
             
         END CASE;
     END PROCESS; --v_combLogic
+	 
+	 mem_update: PROCESS(h_count)
+	 BEGIN
+		IF currstate_v = c AND currstate_h = c THEN
+			 IF unsigned(v_count) > 144 THEN
+			 	mem_addr <= (others => '0');
+			 ELSIF unsigned(h_count) <176 THEN
+				mem_addr <= std_logic_vector(unsigned(v_count)*144 + unsigned(h_count))(14 DOWNTO 0);
+			END IF;
+		END IF;
+	 
+	 END PROCESS;
 
 END Behav;

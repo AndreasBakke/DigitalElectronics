@@ -47,6 +47,7 @@ ARCHITECTURE Behav of VGA_controller IS
     SIGNAL key_not, clk, buff_clk_vga, l, rst_n, h_sync, v_sync: std_logic;
     SIGNAL clear_h, clear_v: std_logic;
     SIGNAL h_count, v_count: std_logic_vector(9 DOWNTO 0);
+	 
     CONSTANT a_h_count : integer := 96; ---targetcount (0 indexed)
     CONSTANT b_h_count : integer := 48;
     CONSTANT c_h_count : integer := 640;
@@ -137,7 +138,7 @@ BEGIN
                         VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '1'); VGA_B <= (OTHERS => '0');
                     END IF;
                 ELSE
-                 IF unsigned(h_count) < 319 THEN --half width
+                 IF unsigned(h_count) <= 319 THEN --half width
                         VGA_R <= (OTHERS => '0'); VGA_G <= (OTHERS => '0'); VGA_B <= (OTHERS => '1');
                     ELSE
                         VGA_R <= (OTHERS => '1'); VGA_G <= (OTHERS => '1'); VGA_B <= (OTHERS => '1');
@@ -159,6 +160,7 @@ BEGIN
             ELSE
                 nextstate_h <= d; clear_h <= '0';
             END IF;
+			-- ADD WHEN OTHERS
         END CASE;
    END PROCESS;--h_nextstate
    
@@ -197,8 +199,11 @@ BEGIN
             ELSE
                 nextstate_v <= d; clear_v <= '0';
             END IF;
-            
+            --ADD WHEN OTHERS
         END CASE;
     END PROCESS; --v_combLogic
 
 END Behav;
+
+
+--Feil: tellerene er ikke 0 når vi går inn i ny state!

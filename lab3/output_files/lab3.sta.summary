@@ -3,35 +3,47 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1100mV 85C Model Setup 'currstate_h.c'
-Slack : -10.981
-TNS   : -105.864
+Slack : -11.978
+TNS   : -171.163
 
-Type  : Slow 1100mV 85C Model Setup 'currstate_h.a'
-Slack : -8.570
-TNS   : -85.670
+Type  : Slow 1100mV 85C Model Setup 'inc_v'
+Slack : -8.897
+TNS   : -85.763
 
 Type  : Slow 1100mV 85C Model Setup 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -7.587
-TNS   : -132.688
+Slack : -8.427
+TNS   : -9470.176
+
+Type  : Slow 1100mV 85C Model Setup 'currstate_h.a'
+Slack : -7.403
+TNS   : -7.403
 
 Type  : Slow 1100mV 85C Model Hold 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -7.026
-TNS   : -271.869
+Slack : -3.776
+TNS   : -3.776
+
+Type  : Slow 1100mV 85C Model Hold 'inc_v'
+Slack : 0.954
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'currstate_h.c'
-Slack : 0.710
+Slack : 1.295
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'currstate_h.a'
-Slack : 0.883
+Slack : 5.641
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'inc_v'
+Slack : -0.394
+TNS   : -5.084
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'currstate_h.c'
+Slack : 0.263
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'currstate_h.a'
-Slack : -0.394
-TNS   : -5.464
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'currstate_h.c'
-Slack : 0.414
+Slack : 0.304
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -43,39 +55,51 @@ Slack : 9.900
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.771
+Slack : 18.758
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'currstate_h.c'
-Slack : -11.031
-TNS   : -106.318
+Slack : -12.029
+TNS   : -171.580
 
-Type  : Slow 1100mV 0C Model Setup 'currstate_h.a'
-Slack : -8.550
-TNS   : -85.470
+Type  : Slow 1100mV 0C Model Setup 'inc_v'
+Slack : -8.827
+TNS   : -85.204
 
 Type  : Slow 1100mV 0C Model Setup 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -6.862
-TNS   : -119.437
+Slack : -7.658
+TNS   : -8498.837
+
+Type  : Slow 1100mV 0C Model Setup 'currstate_h.a'
+Slack : -7.411
+TNS   : -7.411
 
 Type  : Slow 1100mV 0C Model Hold 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -7.075
-TNS   : -275.276
+Slack : -3.931
+TNS   : -4.070
+
+Type  : Slow 1100mV 0C Model Hold 'inc_v'
+Slack : 0.925
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'currstate_h.c'
-Slack : 0.732
+Slack : 1.244
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'currstate_h.a'
-Slack : 0.870
+Slack : 5.700
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'inc_v'
+Slack : -0.394
+TNS   : -5.106
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'currstate_h.c'
+Slack : 0.321
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'currstate_h.a'
-Slack : -0.394
-TNS   : -5.350
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'currstate_h.c'
-Slack : 0.427
+Slack : 0.333
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -87,39 +111,51 @@ Slack : 9.926
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.752
+Slack : 18.738
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -6.207
-TNS   : -104.145
+Slack : -6.676
+TNS   : -7333.044
 
 Type  : Fast 1100mV 85C Model Setup 'currstate_h.c'
-Slack : -5.814
-TNS   : -55.619
+Slack : -6.428
+TNS   : -91.511
+
+Type  : Fast 1100mV 85C Model Setup 'inc_v'
+Slack : -4.662
+TNS   : -44.616
 
 Type  : Fast 1100mV 85C Model Setup 'currstate_h.a'
-Slack : -4.544
-TNS   : -45.428
+Slack : -3.653
+TNS   : -3.653
 
 Type  : Fast 1100mV 85C Model Hold 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -3.922
-TNS   : -142.659
+Slack : -2.062
+TNS   : -2.062
+
+Type  : Fast 1100mV 85C Model Hold 'inc_v'
+Slack : 0.501
+TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'currstate_h.c'
-Slack : 0.350
+Slack : 0.834
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'currstate_h.a'
-Slack : 0.453
+Slack : 3.227
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'currstate_h.a'
-Slack : 0.065
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'inc_v'
+Slack : 0.137
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'currstate_h.c'
-Slack : 0.409
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'currstate_h.a'
+Slack : 0.425
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -131,39 +167,51 @@ Slack : 9.643
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.888
+Slack : 18.879
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'currstate_h.c'
-Slack : -5.572
-TNS   : -53.565
+Slack : -6.164
+TNS   : -87.864
 
 Type  : Fast 1100mV 0C Model Setup 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -4.905
-TNS   : -81.260
+Slack : -5.288
+TNS   : -5742.634
+
+Type  : Fast 1100mV 0C Model Setup 'inc_v'
+Slack : -4.475
+TNS   : -42.911
 
 Type  : Fast 1100mV 0C Model Setup 'currstate_h.a'
-Slack : -4.359
-TNS   : -43.578
+Slack : -3.555
+TNS   : -3.555
 
 Type  : Fast 1100mV 0C Model Hold 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : -3.893
-TNS   : -143.126
+Slack : -2.229
+TNS   : -2.229
+
+Type  : Fast 1100mV 0C Model Hold 'inc_v'
+Slack : 0.451
+TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'currstate_h.c'
-Slack : 0.338
+Slack : 0.784
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'currstate_h.a'
-Slack : 0.409
+Slack : 3.184
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'currstate_h.a'
-Slack : 0.089
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'inc_v'
+Slack : 0.134
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'currstate_h.c'
-Slack : 0.421
+Slack : 0.393
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'currstate_h.a'
+Slack : 0.439
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL|vcoph[0]'
@@ -175,7 +223,7 @@ Slack : 9.632
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'vgaPLL_0|vgapll_inst|altera_pll_i|general[0].gpll~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.888
+Slack : 18.881
 TNS   : 0.000
 
 ------------------------------------------------------------

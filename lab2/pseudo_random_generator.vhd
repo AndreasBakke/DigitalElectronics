@@ -5,7 +5,8 @@ USE ieee.numeric_std.ALL;
 
 entity pseudo_random_generator is
     PORT(
-        CLOCK_50, KEY_0: IN std_logic;
+        CLOCK_50: IN std_logic;
+		  KEY: IN std_logic_vector(0 DOWNTO 0);
         LEDR: OUT std_logic_vector(9 DOWNTO 0)
     );
 begin
@@ -28,7 +29,7 @@ architecture behav of pseudo_random_generator is
 begin
     synchronus_counter_1: synchronous_counter
         GENERIC MAP(N=> 32)
-        PORT MAP(clk => CLOCK_50, RSTn=>KEY_0, en=> '1', clear=>clearcount, UDn =>'0', value=>count);
+        PORT MAP(clk => CLOCK_50, RSTn=>KEY(0), en=> '1', clear=>clearcount, UDn =>'0', value=>count);
         
      alerter: PROCESS(count)
      BEGIN
@@ -41,9 +42,9 @@ begin
          END IF;
      END PROCESS;
     
-    lsfr : process(CLOCK_50, KEY_0)
+    lsfr : process(CLOCK_50, KEY(0))
     begin
-        if KEY_0 = '0' THEN
+        if KEY(0) = '0' THEN
             registers <= (OTHERS => '1');
         elsif rising_edge(CLOCK_50) then
             registers(9) <= registers(0);
@@ -60,9 +61,9 @@ begin
     end process ; -- lsfr
     
     
-    led_update: process(alert, KEY_0)
+    led_update: process(alert, KEY(0))
     begin
-    IF KEY_0 = '0' THEN
+    IF KEY(0) = '0' THEN
         LEDR <= (OTHERS => '1');
     ELSIF rising_Edge(alert) THEN
         LEDR <= registers;
