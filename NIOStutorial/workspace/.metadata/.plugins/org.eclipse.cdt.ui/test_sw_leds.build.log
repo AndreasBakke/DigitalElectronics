@@ -1,0 +1,9 @@
+11:53:07 **** Build of configuration Nios II for project test_sw_leds ****
+make all 
+Info: Building ../test_sw_leds_bsp/
+make --no-print-directory -C ../test_sw_leds_bsp/
+[BSP build complete]
+[test_sw_leds build complete]
+
+11:53:07 Build Finished (took 113ms)
+

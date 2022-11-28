@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="143" />
+   <irq preferredWidth="34" />
+   <export preferredWidth="186" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Project,Library/Interface Protocols/Serial,Library,Library/Interface Protocols" />
+ <window width="1846" height="1053" x="74" y="27" />
+ <generation greybox="1" synthesis="VHDL" />
+</preferences>

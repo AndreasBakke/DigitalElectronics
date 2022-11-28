@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+newSoftwareExampleWizardPage.defaultLocation=/home/andreasb/intelFPGA_lite/21.1/NIOStutorial/software/test_sw_leds
+newSoftwareExampleWizardPage.sopcinfoFile=/home/andreasb/intelFPGA_lite/21.1/NIOStutorial/nios_system.sopcinfo
+newSoftwareExampleWizardPage2.newBspLocation=/home/andreasb/intelFPGA_lite/21.1/NIOStutorial/software/test_sw_leds_bsp

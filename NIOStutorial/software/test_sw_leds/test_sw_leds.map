@@ -1,0 +1,520 @@
+Archive member included to satisfy reference by file (symbol)
+
+../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+                              ../test_sw_leds_bsp//obj/HAL/src/crt0.o (alt_load)
+../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+                              ../test_sw_leds_bsp//obj/HAL/src/crt0.o (alt_main)
+../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+                              obj/default/hello_world_small.o (alt_putstr)
+../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+                              ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o) (alt_irq_init)
+../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                              ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o) (altera_avalon_jtag_uart_write)
+../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                              ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o) (alt_dcache_flush_all)
+../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                              ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o) (alt_icache_flush_all)
+../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                              ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o) (altera_nios2_gen2_irq_init)
+/home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+                              ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o) (memcpy)
+/home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                              ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o) (strlen)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+reset            0x0000000000000000 0x0000000000000020
+onchip_memory2_0 0x0000000000000020 0x0000000000000fe0
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+LOAD obj/default/hello_world_small.o
+LOAD /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libstdc++.a
+LOAD /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libm.a
+LOAD /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/mno-hw-mul/libgcc.a
+START GROUP
+LOAD /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a
+LOAD /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/mno-hw-mul/libgcc.a
+LOAD ../test_sw_leds_bsp//libhal_bsp.a
+LOAD /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libm.a
+END GROUP
+LOAD /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/mno-hw-mul/libgcc.a
+                0x0000000000000000                __alt_mem_onchip_memory2_0 = 0x0
+
+.entry          0x0000000000000000       0x20
+ *(.entry)
+ .entry         0x0000000000000000       0x20 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+                0x0000000000000000                __reset
+                0x000000000000000c                _exit
+
+.exceptions     0x0000000000000020        0x0
+                0x0000000000000020                PROVIDE (__ram_exceptions_start = ABSOLUTE (.))
+                0x0000000000000020                . = ALIGN (0x20)
+ *(.irq)
+ *(.exceptions.entry.label)
+ *(.exceptions.entry.user)
+ *(.exceptions.entry.ecc_fatal)
+ *(.exceptions.entry)
+ *(.exceptions.irqtest.user)
+ *(.exceptions.irqtest)
+ *(.exceptions.irqhandler.user)
+ *(.exceptions.irqhandler)
+ *(.exceptions.irqreturn.user)
+ *(.exceptions.irqreturn)
+ *(.exceptions.notirq.label)
+ *(.exceptions.notirq.user)
+ *(.exceptions.notirq)
+ *(.exceptions.soft.user)
+ *(.exceptions.soft)
+ *(.exceptions.unknown.user)
+ *(.exceptions.unknown)
+ *(.exceptions.exit.label)
+ *(.exceptions.exit.user)
+ *(.exceptions.exit)
+ *(.exceptions)
+                0x0000000000000020                PROVIDE (__ram_exceptions_end = ABSOLUTE (.))
+                0x0000000000000020                PROVIDE (__flash_exceptions_start = LOADADDR (.exceptions))
+
+.text           0x0000000000000020      0x1e4
+                [!provide]                        PROVIDE (stext = ABSOLUTE (.))
+ *(.interp)
+ *(.hash)
+ *(.dynsym)
+ *(.dynstr)
+ *(.gnu.version)
+ *(.gnu.version_d)
+ *(.gnu.version_r)
+ *(.rel.init)
+ *(.rela.init)
+ *(.rel.text .rel.text.* .rel.gnu.linkonce.t.*)
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rel.fini)
+ *(.rela.fini)
+ *(.rel.rodata .rel.rodata.* .rel.gnu.linkonce.r.*)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rel.data .rel.data.* .rel.gnu.linkonce.d.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rel.tdata .rel.tdata.* .rel.gnu.linkonce.td.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rel.tbss .rel.tbss.* .rel.gnu.linkonce.tb.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rel.ctors)
+ *(.rela.ctors)
+ *(.rel.dtors)
+ *(.rela.dtors)
+ *(.rel.got)
+ *(.rela.got)
+ *(.rel.sdata .rel.sdata.* .rel.gnu.linkonce.s.*)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rel.sbss .rel.sbss.* .rel.gnu.linkonce.sb.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rel.sdata2 .rel.sdata2.* .rel.gnu.linkonce.s2.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rel.sbss2 .rel.sbss2.* .rel.gnu.linkonce.sb2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rel.bss .rel.bss.* .rel.gnu.linkonce.b.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+ *(.rel.plt)
+ *(.rela.plt)
+ *(.rel.dyn)
+ *(.init)
+ *(.plt)
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000000000020       0x3c ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+                0x0000000000000020                _start
+ .text          0x000000000000005c        0x0 obj/default/hello_world_small.o
+ .text.startup  0x000000000000005c       0x18 obj/default/hello_world_small.o
+                0x000000000000005c                main
+ .text          0x0000000000000074       0x84 ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+                0x0000000000000074                alt_load
+ .text          0x00000000000000f8       0x2c ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+                0x00000000000000f8                alt_main
+ .text          0x0000000000000124       0x38 ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+                0x0000000000000124                alt_putstr
+ .text          0x000000000000015c       0x24 ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x000000000000015c                alt_irq_init
+                0x000000000000017c                alt_sys_init
+ .text          0x0000000000000180       0x30 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x0000000000000180                altera_avalon_jtag_uart_write
+ .text          0x00000000000001b0        0x4 ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                0x00000000000001b0                alt_dcache_flush_all
+ .text          0x00000000000001b4        0x4 ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                0x00000000000001b4                alt_icache_flush_all
+ .text          0x00000000000001b8        0x8 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                0x00000000000001b8                altera_nios2_gen2_irq_init
+ .text          0x00000000000001c0        0x0 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .text.memcpy   0x00000000000001c0       0x28 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+                0x00000000000001c0                memcpy
+ .text          0x00000000000001e8        0x0 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ .text.strlen   0x00000000000001e8       0x1c /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                0x00000000000001e8                strlen
+ *(.gnu.warning.*)
+ *(.fini)
+                [!provide]                        PROVIDE (__etext = ABSOLUTE (.))
+                [!provide]                        PROVIDE (_etext = ABSOLUTE (.))
+                [!provide]                        PROVIDE (etext = ABSOLUTE (.))
+ *(.eh_frame_hdr)
+                0x0000000000000204                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (__preinit_array_start = ABSOLUTE (.))
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = ABSOLUTE (.))
+                [!provide]                        PROVIDE (__init_array_start = ABSOLUTE (.))
+ *(.init_array)
+                [!provide]                        PROVIDE (__init_array_end = ABSOLUTE (.))
+                [!provide]                        PROVIDE (__fini_array_start = ABSOLUTE (.))
+ *(.fini_array)
+                [!provide]                        PROVIDE (__fini_array_end = ABSOLUTE (.))
+ *(.eh_frame)
+ *(.gcc_except_table .gcc_except_table.*)
+ *(.dynamic)
+                [!provide]                        PROVIDE (__CTOR_LIST__ = ABSOLUTE (.))
+ *(.ctors)
+ *(SORT_BY_NAME(.ctors.*))
+                [!provide]                        PROVIDE (__CTOR_END__ = ABSOLUTE (.))
+                [!provide]                        PROVIDE (__DTOR_LIST__ = ABSOLUTE (.))
+ *(.dtors)
+ *(SORT_BY_NAME(.dtors.*))
+                [!provide]                        PROVIDE (__DTOR_END__ = ABSOLUTE (.))
+ *(.jcr)
+                0x0000000000000204                . = ALIGN (0x4)
+
+.rodata         0x0000000000000204       0x18
+                0x0000000000000204                PROVIDE (__ram_rodata_start = ABSOLUTE (.))
+                0x0000000000000204                . = ALIGN (0x4)
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata.str1.4
+                0x0000000000000204       0x15 obj/default/hello_world_small.o
+ *(.rodata1)
+                0x000000000000021c                . = ALIGN (0x4)
+ *fill*         0x0000000000000219        0x3 
+                0x000000000000021c                PROVIDE (__ram_rodata_end = ABSOLUTE (.))
+                0x0000000000000204                PROVIDE (__flash_rodata_start = LOADADDR (.rodata))
+
+.rwdata         0x000000000000021c        0x4 load address 0x0000000000000220
+                0x000000000000021c                PROVIDE (__ram_rwdata_start = ABSOLUTE (.))
+                0x000000000000021c                . = ALIGN (0x4)
+ *(.got.plt)
+ *(.got)
+ *(.data1)
+ *(.data .data.* .gnu.linkonce.d.*)
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+ .data          0x000000000000021c        0x0 obj/default/hello_world_small.o
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x000000000000021c        0x0 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .data          0x000000000000021c        0x0 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .data          0x000000000000021c        0x0 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                0x000000000000821c                _gp = ABSOLUTE ((. + 0x8000))
+                [!provide]                        PROVIDE (gp = _gp)
+ *(.rwdata .rwdata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+ .sdata         0x000000000000021c        0x4 ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+                0x000000000000021c                jtag_uart_0
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+                0x0000000000000220                . = ALIGN (0x4)
+                0x0000000000000220                _edata = ABSOLUTE (.)
+                [!provide]                        PROVIDE (edata = ABSOLUTE (.))
+                0x0000000000000220                PROVIDE (__ram_rwdata_end = ABSOLUTE (.))
+                0x0000000000000220                PROVIDE (__flash_rwdata_start = LOADADDR (.rwdata))
+
+.bss            0x0000000000000224        0xc
+                0x0000000000000224                __bss_start = ABSOLUTE (.)
+                [!provide]                        PROVIDE (__sbss_start = ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_start = ABSOLUTE (.))
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ .sbss          0x0000000000000224        0xc ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+                0x0000000000000224                alt_envp
+                0x0000000000000228                alt_argv
+                0x000000000000022c                alt_argc
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+ *(.scommon)
+                [!provide]                        PROVIDE (__sbss_end = ABSOLUTE (.))
+                [!provide]                        PROVIDE (___sbss_end = ABSOLUTE (.))
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+ .bss           0x0000000000000230        0x0 obj/default/hello_world_small.o
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0000000000000230        0x0 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .bss           0x0000000000000230        0x0 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .bss           0x0000000000000230        0x0 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+ *(COMMON)
+                0x0000000000000230                . = ALIGN (0x4)
+                0x0000000000000230                __bss_end = ABSOLUTE (.)
+
+.onchip_memory2_0
+                0x0000000000000230        0x0
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_start = ABSOLUTE (.))
+ *(.onchip_memory2_0 .onchip_memory2_0. onchip_memory2_0.*)
+                0x0000000000000230                . = ALIGN (0x4)
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_end = ABSOLUTE (.))
+                0x0000000000000230                _end = ABSOLUTE (.)
+                0x0000000000000230                end = ABSOLUTE (.)
+                0x0000000000000230                __alt_stack_base = ABSOLUTE (.)
+                [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_load_addr = LOADADDR (.onchip_memory2_0))
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x2d
+ *(.comment)
+ .comment       0x0000000000000000       0x2d obj/default/hello_world_small.o
+                                         0x2e (size before relaxing)
+ .comment       0x000000000000002d       0x2e ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .comment       0x000000000000002d       0x2e ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+ .comment       0x000000000000002d       0x2e ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .comment       0x000000000000002d       0x2e ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .comment       0x000000000000002d       0x2e ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .comment       0x000000000000002d       0x2e ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .comment       0x000000000000002d       0x2e ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .comment       0x000000000000002d       0x2e ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .comment       0x000000000000002d       0x2e /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .comment       0x000000000000002d       0x2e /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000      0x188
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+ .debug_aranges
+                0x0000000000000028       0x20 obj/default/hello_world_small.o
+ .debug_aranges
+                0x0000000000000048       0x20 ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .debug_aranges
+                0x0000000000000068       0x20 ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+ .debug_aranges
+                0x0000000000000088       0x20 ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_aranges
+                0x00000000000000a8       0x20 ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_aranges
+                0x00000000000000c8       0x20 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_aranges
+                0x00000000000000e8       0x20 ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_aranges
+                0x0000000000000108       0x20 ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_aranges
+                0x0000000000000128       0x20 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_aranges
+                0x0000000000000148       0x20 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_aranges
+                0x0000000000000168       0x20 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000      0xb7c
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0x22 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+ .debug_info    0x0000000000000022       0x80 obj/default/hello_world_small.o
+ .debug_info    0x00000000000000a2      0x239 ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .debug_info    0x00000000000002db      0x13e ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000000000000419      0x15c ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_info    0x0000000000000575      0x127 ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x000000000000069c      0x147 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x00000000000007e3       0x8d ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x0000000000000870       0x8d ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x00000000000008fd       0x8d ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_info    0x000000000000098a      0x121 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_info    0x0000000000000aab       0xd1 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_abbrev   0x0000000000000000      0x787
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x12 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+ .debug_abbrev  0x0000000000000012       0x83 obj/default/hello_world_small.o
+ .debug_abbrev  0x0000000000000095      0x12c ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x00000000000001c1       0xeb ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x00000000000002ac       0xd3 ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_abbrev  0x000000000000037f      0x107 ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x0000000000000486       0xeb ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_abbrev  0x0000000000000571       0x43 ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x00000000000005b4       0x43 ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x00000000000005f7       0x43 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_abbrev  0x000000000000063a       0xc1 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x00000000000006fb       0x8c /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_line     0x0000000000000000      0x5d7
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0x66 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+ .debug_line    0x0000000000000066       0x6e obj/default/hello_world_small.o
+ .debug_line    0x00000000000000d4       0xd2 ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .debug_line    0x00000000000001a6       0xa2 ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+ .debug_line    0x0000000000000248       0x79 ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_line    0x00000000000002c1       0x8e ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x000000000000034f       0x92 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x00000000000003e1       0x4e ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x000000000000042f       0x4c ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x000000000000047b       0x54 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_line    0x00000000000004cf       0x8c /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_line    0x000000000000055b       0x7c /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_frame    0x0000000000000000      0x1ac
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x28 obj/default/hello_world_small.o
+ .debug_frame   0x0000000000000028       0x2c ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .debug_frame   0x0000000000000054       0x2c ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+ .debug_frame   0x0000000000000080       0x30 ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_frame   0x00000000000000b0       0x3c ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x00000000000000ec       0x20 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x000000000000010c       0x20 ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x000000000000012c       0x20 ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x000000000000014c       0x20 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_frame   0x000000000000016c       0x20 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_frame   0x000000000000018c       0x20 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_str      0x0000000000000000      0x3bf
+ *(.debug_str)
+ .debug_str     0x0000000000000000       0x68 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+ .debug_str     0x0000000000000068       0x5e obj/default/hello_world_small.o
+                                         0x68 (size before relaxing)
+ .debug_str     0x00000000000000c6      0x175 ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+                                        0x208 (size before relaxing)
+ .debug_str     0x000000000000023b       0x4b ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+                                        0x138 (size before relaxing)
+ .debug_str     0x0000000000000286       0x58 ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+                                        0x14b (size before relaxing)
+ .debug_str     0x00000000000002de       0x5c ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+                                        0x18a (size before relaxing)
+ .debug_str     0x000000000000033a       0x13 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                                        0x15c (size before relaxing)
+ .debug_str     0x000000000000034d       0xfd ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_str     0x000000000000034d       0xfd ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_str     0x000000000000034d      0x103 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+ .debug_str     0x000000000000034d       0x72 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+                                        0x115 (size before relaxing)
+ .debug_str     0x00000000000003bf       0x72 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                                        0x107 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_alt_sim_info
+                0x0000000000000000       0x10
+ *(.debug_alt_sim_info)
+ .debug_alt_sim_info
+                0x0000000000000000       0x10 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+                0x0000000000001000                __alt_data_end = 0x1000
+                0x0000000000001000                PROVIDE (__alt_stack_pointer = __alt_data_end)
+                [!provide]                        PROVIDE (__alt_stack_limit = __alt_stack_base)
+                [!provide]                        PROVIDE (__alt_heap_start = end)
+                [!provide]                        PROVIDE (__alt_heap_limit = 0x1000)
+OUTPUT(test_sw_leds.elf elf32-littlenios2)
+LOAD linker stubs
+
+.debug_ranges   0x0000000000000000       0x20
+ .debug_ranges  0x0000000000000000       0x20 ../test_sw_leds_bsp//obj/HAL/src/crt0.o
+
+.debug_rnglists
+                0x0000000000000000       0x5c
+ .debug_rnglists
+                0x0000000000000000       0x13 obj/default/hello_world_small.o
+ .debug_rnglists
+                0x0000000000000013       0x23 ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+ .debug_rnglists
+                0x0000000000000036       0x13 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_rnglists
+                0x0000000000000049       0x13 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+
+.debug_line_str
+                0x0000000000000000      0x572
+ .debug_line_str
+                0x0000000000000000       0x87 obj/default/hello_world_small.o
+                                         0xf5 (size before relaxing)
+ .debug_line_str
+                0x0000000000000087       0xab ../test_sw_leds_bsp//libhal_bsp.a(alt_load.o)
+                                        0x113 (size before relaxing)
+ .debug_line_str
+                0x0000000000000132       0x4a ../test_sw_leds_bsp//libhal_bsp.a(alt_main.o)
+                                        0x112 (size before relaxing)
+ .debug_line_str
+                0x000000000000017c       0xee ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+                                        0x1ac (size before relaxing)
+ .debug_line_str
+                0x000000000000026a       0x4f ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+                                        0x123 (size before relaxing)
+ .debug_line_str
+                0x00000000000002b9       0x38 ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                                        0x156 (size before relaxing)
+ .debug_line_str
+                0x00000000000002f1       0x1f ../test_sw_leds_bsp//libhal_bsp.a(alt_dcache_flush_all.o)
+                                         0xf1 (size before relaxing)
+ .debug_line_str
+                0x0000000000000310       0x1f ../test_sw_leds_bsp//libhal_bsp.a(alt_icache_flush_all.o)
+                                         0xf1 (size before relaxing)
+ .debug_line_str
+                0x000000000000032f       0x20 ../test_sw_leds_bsp//libhal_bsp.a(altera_nios2_gen2_irq.o)
+                                         0xf4 (size before relaxing)
+ .debug_line_str
+                0x000000000000034f      0x1e4 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+                                        0x2d5 (size before relaxing)
+ .debug_line_str
+                0x0000000000000533       0x3f /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
+                                        0x2d5 (size before relaxing)
+
+.debug_loclists
+                0x0000000000000000      0x194
+ .debug_loclists
+                0x0000000000000000       0x2c ../test_sw_leds_bsp//libhal_bsp.a(alt_putstr.o)
+ .debug_loclists
+                0x000000000000002c       0x1e ../test_sw_leds_bsp//libhal_bsp.a(alt_sys_init.o)
+ .debug_loclists
+                0x000000000000004a       0x4c ../test_sw_leds_bsp//libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_loclists
+                0x0000000000000096       0xcc /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-memcpy.o)
+ .debug_loclists
+                0x0000000000000162       0x32 /home/andreasb/intelFPGA_lite/21.1/nios2eds/bin/gnu/H-x86_64-pc-linux-gnu/bin/../lib/gcc/nios2-elf/11.2.1/../../../../../H-x86_64-pc-linux-gnu/nios2-elf/lib/mno-hw-mul/libsmallc.a(lib_a-strlen.o)
