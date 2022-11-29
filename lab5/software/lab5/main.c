@@ -27,21 +27,18 @@ int main()
    * EULER COMPUTATIONS
    */
   long time;
-  double euler;
-  int i, j;
-  for (j = 0; j <15; j++){
+  double euler=0;
+  int j;
+  for (j = 0; j <=15; j++){
 	  PERF_RESET(PERFORMANCE_COUNTER_0_BASE); //Reset Performance Counter
 	  PERF_START_MEASURING(PERFORMANCE_COUNTER_0_BASE); //Start Performance Counter
 	  PERF_BEGIN(PERFORMANCE_COUNTER_0_BASE,1); // Begin performance counter
-	  euler = 0;
-	  for(i = 0; i < j; i++){
-		  euler += (double)1/(factorial(i)); //Need to cast to double to not get 2.00000
-	  }
-	  PERF_END(PERFORMANCE_COUNTER_0_BASE,1);
+	  euler += (double)1/(factorial(j)); //Need to cast to double to not get int
+	  PERF_END(PERFORMANCE_COUNTER_0_BASE,1); //Stop counter
 	  time=(long)perf_get_section_time(PERFORMANCE_COUNTER_0_BASE,1); //Gets time as number of clock cycles.
-	  time= time/50;
-	  alt_putstr("Euler aprx. = %.10f \n", euler);
-	  alt_putstr("Time = %ld usec\n",time); //time in microseconds
+	  time= time/50; //Get time in microseconds
+	  printf("Euler aprx.%d = %.10f  ",j, euler); //Print result
+	  printf(" Time = %ld usec\n",time);
   }
 
   while (1);
@@ -74,29 +71,18 @@ void init_all() // From Lab5 figure17
  * TIMER INTERRUPT ROUTINE
  *  Modified from Lab5 figure 18
 */
-
-static void timer_isr(void *contect) //Timer should be set to interrupt ever 250ms;
+int dir = 0;
+static void timer_isr(void *context) //Timer should be set to interrupt ever 250ms;
 {
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_0_BASE, 0x00); //Clear interrupt by writing 0s
 	if ((key_edge & 0x01)==1)
 	{
-		led_position = (led_position+1)%8; //increments 0->7 and around
-		if (led_position <= 0){ //If led is 0 or somehow negative, set next position to led 7
-			led_position = 0b10000000;
-		}
-		else
-		{
-			led_position = led_position >> 1;
-		}
+		dir = 1; //corresponds to moving right
+		key_edge = 0;
 	}
-	else if((key_edge & 0x02)==1) {
-		if (led_position >= 0b10000000){ //If led is 2^7 or somehow more, set next position to led 7
-			led_position = 0b00000001;
-		}
-		else
-		{
-			led_position = led_position << 1; //Left shift
-		}
+	else if((key_edge & 0x02)==2) {
+		dir = -1; //corresponds to moving left
+		key_edge = 0;
 
 	}
 	update_leds();
@@ -122,7 +108,25 @@ void init_timer()
 
 void update_leds(){
 	//write value of led position
-	IOWR_ALTERA_AVALON_PIO_DATA(LEDR_BASE, led_position & 0xff);
+	if (dir == 1){
+		if (led_position <= 1){ //If led is 0 or somehow negative, set next position to led 7
+			led_position = 0b10000000;
+		}
+		else
+		{
+			led_position = led_position >> 1;//Right shift
+		}
+	} else if (dir == -1){
+		if (led_position >= 0b10000000){ //If led is 2^7 or somehow more, set next position to led 7
+			led_position = 0b00000001;
+		}
+		else
+		{
+			led_position = led_position << 1; //Left shift
+		}
+	}
+
+	IOWR_ALTERA_AVALON_PIO_DATA(LEDR_BASE, led_position);
 }
 
 /*
